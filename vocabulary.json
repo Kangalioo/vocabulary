@@ -1,0 +1,844 @@
+{
+	"primary": "de",
+	"primaryDisplay": "deutsch",
+	"secondary": "es",
+	"secondaryDisplay": "spanisch",
+	
+	"sections": {
+		"_Nuevas palabras": [
+			{
+				"de": ["das wäre genial", "es wäre genial"],
+				"es": "sería genial"
+			},
+			{
+				"de": "die Möglichkeit",
+				"es": "la oportunidad"
+			},
+			{
+				"de": "die Zeitformen",
+				"es": "los tiempos verbales"
+			},
+			{
+				"de": "unterschiedlich",
+				"es": ["distinto", "distinta"]
+			},
+			{
+				"de": {
+					"word": "schicken",
+					"display": "schicken (eine E-mail)"
+				},
+				"es": {
+					"word": "mandar",
+					"display": "mandar (un correo electrónico)"
+				}
+			},
+			{
+				"de": "antworten",
+				"es": "responder"
+			},
+			{
+				"de": "die Antwort",
+				"es": "la respuesta"
+			},
+			{
+				"de": "obwohl",
+				"es": "aunque"
+			},
+			{
+				"de": "nämlich",
+				"es": "o sea"
+			},
+			{
+				"de": "der Fehler",
+				"es": "el error"
+			},
+			{
+				"de": "die Anzahl",
+				"es": "la cantidad"
+			},
+			{
+				"de": "entsprechend",
+				"es": "correspondiente"
+			},
+			{
+				"de": "unterstreichen",
+				"es": "subrayar"
+			},
+			{
+				"de": ["benutzen", "verwenden"],
+				"es": "utilizar"
+			},
+			{
+				"de": "unbekannt",
+				"es": "desconocido"
+			},
+			{
+				"de": "die Lösung",
+				"es": "la solución"
+			},
+			{
+				"de": "mindestens",
+				"es": "por lo menos"
+			},
+			{
+				"de": "die Verwandten",
+				"es": "los parientes"
+			},
+			{
+				"de": "der Kindergarten",
+				"es": "la guardería"
+			},
+			{
+				"de": "das Fieber",
+				"es": "la fiebre"
+			},
+			{
+				"de": {
+					"word": ["die alte Frau", "die ganz alte Frau"],
+					"display": "die (ganz) alte Frau"
+				},
+				"es": "la anciana"
+			},
+			{
+				"de": "zahlen",
+				"es": "cobrar"
+			},
+			{
+				"de": "Fahrrad fahren",
+				"es": "ir en bicicleta"
+			},
+			{
+				"de": "reiten",
+				"es": "montar a caballo"
+			},
+			{
+				"de": "der Kuchen",
+				"es": "el pastel"
+			},
+			{
+				"de": ["zu Abend essen", "abendessen"],
+				"es": "cenar"
+			},
+			{
+				"de": "die Pyramide",
+				"es": "la pirámide"
+			},
+			{
+				"de": "der Geburtstag",
+				"es": "el cumpleaños"
+			},
+			{
+				"de": "Spaß haben",
+				"es": "pasarlo bien"
+			},
+			{
+				"de": ["der Wohnwagen", "das Wohnmobil"],
+				"es": "la caravana"
+			},
+			{
+				"de": "laufen",
+				"es": "correr"
+			}
+		],
+		"Unidad 1 - Primer paso: En el barrio La Latina": [
+			{
+				"de": "umziehen",
+				"es": "mudarse"
+			},
+			{
+				"de": "sich um jdn. kümmern",
+				"es": "cuidar a alguien"
+			},
+			{
+				"de": "ein Kiosk",
+				"es": "un quiosco"
+			},
+			{
+				"de": "ein Kindergarten, eine Kinderkrippe",
+				"es": "una guardería"
+			},
+			{
+				"de": "jdm. etw. berechnen, von jdm. etw. verlangen",
+				"es": "cobrar algo a alguien"
+			},
+			{
+				"de": "blind",
+				"es": "ciego, -a"
+			},
+			{
+				"de": "ein Senior, ein alter Mann; eine Seniorin, eine alte Frau",
+				"es": "un anciano, una anciana"
+			},
+			{
+				"de": "jdm. sehr gefallen",
+				"es": "molar a alguien"
+			},
+			{
+				"de": "eine Stange",
+				"es": "un barra"
+			},
+			{
+				"de": "eine Pesete",
+				"es": "una peseta"
+			},
+			{
+				"de": "die spanische Nationalbank",
+				"es": "el Banco de España"
+			},
+			{
+				"de": "das Fieber",
+				"es": "la fiebre"
+			},
+			{
+				"de": "verheiratet (sein)",
+				"es": "(estar) casado, -a"
+			},
+			{
+				"de": "ein Lotterielos",
+				"es": "un billete de lotería"
+			},
+			{
+				"de": "etw. anfangen, etw. beginnen",
+				"es": "comenzar (-ie-) algo"
+			},
+			{
+				"de": "jdn. um etw. bitten",
+				"es": "pedir (-i-/-i-) algo a alguien"
+			},
+			{
+				"de": "ein Guatemalteke, eine Guatemaltekin",
+				"es": "un guatemalteco, una guatemalteca"
+			},
+			{
+				"de": "eine Hausfrau",
+				"es": "un amade casa"
+			},
+			{
+				"de": "das Taschengeld",
+				"es": "la paga"
+			},
+			{
+				"de": "eine Kappe",
+				"es": "una gorra"
+			},
+			{
+				"de": "ein Café",
+				"es": "una churrería"
+			},
+			{
+				"de": "ein Baguette",
+				"es": "una barra de pan"
+			},
+			{
+				"de": "Zahlen, bitte!",
+				"es": "¿Me cobras?"
+			}
+		],
+		"Unidad 1 – Texto: El primer día": [
+			{
+				"de": "sich über etw. ärgern",
+				"es": "enfadarse por algo"
+			},
+			{
+				"de": "Madrid",
+				"es": "la Comunidad de Madrid"
+			},
+			{
+				"de": "sich den Kopf zerbrechen",
+				"es": "romperse la cabeza"
+			},
+			{
+				"de": "eine Mumie",
+				"es": "una momia"
+			},
+			{
+				"de": "positiv",
+				"es": "positivo, -a"
+			},
+			{
+				"de": "etw. versuchen",
+				"es": "intentar algo"
+			},
+			{
+				"de": "ein Klassenzimmer",
+				"es": "un aula"
+			},
+			{
+				"de": "das Gesicht",
+				"es": "la cara"
+			},
+			{
+				"de": "etw. anschalten",
+				"es": "encender (-ie-) algo"
+			},
+			{
+				"de": "ein Film",
+				"es": "una película"
+			},
+			{
+				"de": "eine Erklärung",
+				"es": "una explicación"
+			},
+			{
+				"de": "eine Provinz",
+				"es": "una provincia"
+			},
+			{
+				"de": "auf zu ...",
+				"es": "a por"
+			},
+			{
+				"de": "das Fernsehen",
+				"es": "la tele"
+			},
+			{
+				"de": "unartig, böse",
+				"es": "malo, -a"
+			},
+			{
+				"de": "funktionieren",
+				"es": "funcionar"
+			},
+			{
+				"de": "kompliziert",
+				"es": "complicado, -a"
+			},
+			{
+				"de": "etw. / jdn. bemerken",
+				"es": "notar algo / a alguien"
+			},
+			{
+				"de": "ein Löwe",
+				"es": "un león"
+			},
+			{
+				"de": "eine DVD; ein DVD-Player",
+				"es": "un DVD"
+			},
+			{
+				"de": "eine Klingel",
+				"es": "un timbre"
+			},
+			{
+				"de": "eine Tomate",
+				"es": "un tomate"
+			},
+			{
+				"de": "nur Bahnhof verstehen",
+				"es": "no entender (-ie-) ni papa"
+			},
+			{
+				"de": "Spaß haben",
+				"es": "pasarlo bien"
+			},
+			{
+				"de": "das Lehrerzimmer",
+				"es": "la sala de profesores"
+			},
+			{
+				"de": "anders, unterschiedlich",
+				"es": "distinto, -a"
+			},
+			{
+				"de": "nur Mut!",
+				"es": "¡ánimo!"
+			},
+			{
+				"de": "sich an etw. / jdn. erinnern",
+				"es": "acordarse (-ue-) de algo / alguien"
+			},
+			{
+				"de": "aufmerksam",
+				"es": "atento, -a"
+			},
+			{
+				"de": "ein Apparat, ein Gerät",
+				"es": "un aparato"
+			},
+			{
+				"de": "immer (+ Steigerungsform des Adj.), immer mehr (+ Subst.)",
+				"es": "cada vez más"
+			},
+			{
+				"de": "etw. ausschalten",
+				"es": "apagar algo"
+			},
+			{
+				"de": "sich etw. / jdm. nähern",
+				"es": "acercarse a algo / alguien"
+			},
+			{
+				"de": "zu (+ adj.), zuviel",
+				"es": "demasiado"
+			},
+			{
+				"de": "ein Akzent",
+				"es": "un acento"
+			},
+			{
+				"de": "verrückt (sein)",
+				"es": "(estar) loco, -a"
+			},
+			{
+				"de": "eine Schule",
+				"es": "un colegio"
+			},
+			{
+				"de": "da, weil",
+				"es": "como (Konj.)"
+			},
+			{
+				"de": "eine Technik, eine Technologie",
+				"es": "una tecnología"
+			},
+			{
+				"de": "in etw. (hinein)passen",
+				"es": "caber (1ª pers. quepo) en algo"
+			},
+			{
+				"de": "nicht einmal",
+				"es": "ni siquiera"
+			},
+			{
+				"de": "früher",
+				"es": "antes"
+			},
+			{
+				"de": "brav; gutmütig",
+				"es": "bueno, -a"
+			},
+			{
+				"de": "jdn. verrückt machen",
+				"es": "tener loco, -a a alguien"
+			},
+			{
+				"de": "eine Möglichkeit",
+				"es": "una posibilidad"
+			}
+		],
+		"Unidad 2 – Texto: Todos me quieren tomar el pelo": [
+			{
+				"de": "ein Junge, ein Bursche, eine junge Frau",
+				"es": "un chaval, una chavala"
+			},
+			{
+				"de": "etw. hoffen",
+				"es": "esperar algo"
+			},
+			{
+				"de": "jdm. etw. befehlen; das Sagen haben",
+				"es": "mandar (algo a alguien)"
+			},
+			{
+				"de": "ein Casting",
+				"es": "un casting"
+			},
+			{
+				"de": "jdn. auf den Arm nehmen",
+				"es": "tomar el pelo a alguien"
+			},
+			{
+				"de": "groß, großartig",
+				"es": "gran"
+			},
+			{
+				"de": "ein Ohrring",
+				"es": "un pendiente"
+			},
+			{
+				"de": "ein Film",
+				"es": "una peli"
+			},
+			{
+				"de": "über etw. / jdn. lachen",
+				"es": "reírse de algo / alguien"
+			},
+			{
+				"de": "etw. (er)schaffen",
+				"es": "crear algo"
+			},
+			{
+				"de": "eine Schere",
+				"es": "unas tijeras"
+			},
+			{
+				"de": "sich von jdm. trennen",
+				"es": "separarse de alguien"
+			},
+			{
+				"de": "einzig",
+				"es": "único, -a"
+			},
+			{
+				"de": "wegen",
+				"es": "por"
+			},
+			{
+				"de": "Hilfe!",
+				"es": "¡socorro!"
+			},
+			{
+				"de": "ein Plakat",
+				"es": "un cartel"
+			},
+			{
+				"de": "ein Avatar",
+				"es": "un avatar"
+			},
+			{
+				"de": "ein Kumpel, ein Freund, eine Freundin",
+				"es": "un / una colega"
+			},
+			{
+				"de": "ein Scherz",
+				"es": "una broma"
+			},
+			{
+				"de": "ein Gymnasium",
+				"es": "un insti"
+			},
+			{
+				"de": "das Aussehen, das Äußere",
+				"es": "el aspecto"
+			},
+			{
+				"de": "faul; ein Faulpelz",
+				"es": "vago, -a"
+			},
+			{
+				"de": "etw. satt haben",
+				"es": "estar harto, -a de algo"
+			},
+			{
+				"de": "etw. (ab-)schneiden",
+				"es": "cortar algo"
+			},
+			{
+				"de": "ein Schauspieler, eine Schauspielerin",
+				"es": "un actor, una actriz"
+			},
+			{
+				"de": "ein Sachverhalt, eine Angelegenheit,",
+				"es": "un asunto"
+			},
+			{
+				"de": "arm, bedauernswert",
+				"es": "pobre"
+			},
+			{
+				"de": "einzig",
+				"es": "solo, -a"
+			}
+		],
+		"Unidad 3 – Texto – Conversación de vecinos": [
+			{
+				"de": "etw. mieten; jdm. etw. vermieten",
+				"es": "alquilar algo a alguien"
+			},
+			{
+				"de": "sicher",
+				"es": "seguro"
+			},
+			{
+				"de": "ein Dialog",
+				"es": "un diálogo"
+			},
+			{
+				"de": "dennoch",
+				"es": "sin embargo"
+			},
+			{
+				"de": "ein Kurzfilm",
+				"es": "un corto"
+			},
+			{
+				"de": "etw. behalten",
+				"es": "guardar algo"
+			},
+			{
+				"de": "etw. schon seit (+ Zeitraum) tun",
+				"es": "llevar (+ Zeitraum)"
+			},
+			{
+				"de": "Nichts da!",
+				"es": "De eso nada."
+			},
+			{
+				"de": "(Adj. +) werden",
+				"es": "hacerse"
+			},
+			{
+				"de": "eine Endung",
+				"es": "una terminación"
+			},
+			{
+				"de": "ein Kaffee",
+				"es": "un café"
+			},
+			{
+				"de": "etw. nach und nach / immer mehr tun",
+				"es": "ir"
+			},
+			{
+				"de": "ein Gefallen",
+				"es": "un favor"
+			},
+			{
+				"de": "bis",
+				"es": "hasta que"
+			},
+			{
+				"de": "ein Student, eine Studentin",
+				"es": "un / una estudiante"
+			},
+			{
+				"de": "Andalusien",
+				"es": "Andalucía"
+			},
+			{
+				"de": "an etw. teilnehmen",
+				"es": "participar en algo"
+			},
+			{
+				"de": "frittiertes Spritzgebäck",
+				"es": "un churro"
+			},
+			{
+				"de": "etw. für / anstelle von jdm. tun",
+				"es": "hacer algo por alguien"
+			},
+			{
+				"de": "drehen",
+				"es": "rodar (-ue-)"
+			},
+			{
+				"de": "gewinnen, drankommen",
+				"es": "tocar a alguien"
+			},
+			{
+				"de": "optimistisch",
+				"es": "optimista"
+			},
+			{
+				"de": "sogar",
+				"es": "incluso"
+			},
+			{
+				"de": "eine Schule",
+				"es": "una escuela"
+			},
+			{
+				"de": "ein Losanteil",
+				"es": "un décimo"
+			},
+			{
+				"de": "(das) Weihnachten",
+				"es": "la Navidad"
+			},
+			{
+				"de": "und Schluss",
+				"es": "y punto."
+			},
+			{
+				"de": "neugierig",
+				"es": "curioso, -a"
+			},
+			{
+				"de": "ein Ehepaar",
+				"es": "un matrimonio"
+			},
+			{
+				"de": "eine Information",
+				"es": "una información"
+			},
+			{
+				"de": "ein Dutzend",
+				"es": "una docena"
+			}
+		],
+		"Unidad 4 – Primer paso: Entre Oriente y Occidente": [
+			{
+				"de": "eine Burg",
+				"es": "un castillo"
+			},
+			{
+				"de": "eine Kathedrale, ein Dom",
+				"es": "una catedral"
+			},
+			{
+				"de": "eine Kultur",
+				"es": "una cultura"
+			},
+			{
+				"de": "eine Landschaft",
+				"es": "un paisaje"
+			},
+			{
+				"de": "Asien",
+				"es": "Asia"
+			},
+			{
+				"de": "Ozeanien",
+				"es": "Oceanía"
+			},
+			{
+				"de": "ein Tal",
+				"es": "un valle"
+			},
+			{
+				"de": "ein Palast, ein Schloss",
+				"es": "un palacio"
+			},
+			{
+				"de": "Afrika",
+				"es": "África"
+			},
+			{
+				"de": "arabisch",
+				"es": "árabe"
+			},
+			{
+				"de": "Amerika",
+				"es": "América"
+			},
+			{
+				"de": "jüdisch",
+				"es": "judío, -a"
+			},
+			{
+				"de": "christlich",
+				"es": "cristiano, -a"
+			},
+			{
+				"de": "eine Bergkette",
+				"es": "una sierra"
+			},
+			{
+				"de": "eine Moschee",
+				"es": "una mezquita"
+			},
+			{
+				"de": "eine Wüste",
+				"es": "un desierto"
+			}
+		],
+		"Unidad 4 – Texto: El tesoro de Boabdil": [
+			{
+				"de": "ein Angestellter, eine Angestellte",
+				"es": "un empleado, una empleada"
+			},
+			{
+				"de": "ein Bart",
+				"es": "una barba"
+			},
+			{
+				"de": "ein König, eine Königin",
+				"es": "un rey, una reina"
+			},
+			{
+				"de": "etw. / jdn. festhalten",
+				"es": "sujetar algo / a alguien"
+			},
+			{
+				"de": "gegen etw. / jdn. kämpfen",
+				"es": "luchar contra algo / alguien"
+			},
+			{
+				"de": "ein Schatz",
+				"es": "un tesoro"
+			},
+			{
+				"de": "etw. bemerken",
+				"es": "darse cuenta de algo"
+			},
+			{
+				"de": "etw. / jdn. verlassen, etw. aufgeben",
+				"es": "abandonar algo / a alguien"
+			},
+			{
+				"de": "ein Krieg",
+				"es": "una guerra"
+			},
+			{
+				"de": "jdm. folgen",
+				"es": "seguir (-i-/-i-) a alguien"
+			},
+			{
+				"de": "ein Paar",
+				"es": "una pareja"
+			},
+			{
+				"de": "die Katholischen Könige",
+				"es": "los Reyes Católicos"
+			},
+			{
+				"de": "verschwinden",
+				"es": "desaparecer (-zco)"
+			},
+			{
+				"de": "ein Saal",
+				"es": "una sala"
+			},
+			{
+				"de": "etw. entdecken, etw. finden",
+				"es": "descubrir algo"
+			},
+			{
+				"de": "anfangen etw. zu tun",
+				"es": "ponerse a hacer algo"
+			},
+			{
+				"de": "die Angst",
+				"es": "el miedo"
+			},
+			{
+				"de": "etw. verstecken",
+				"es": "esconder algo"
+			},
+			{
+				"de": "eine Führung",
+				"es": "una visita guiada"
+			},
+			{
+				"de": "eine Legende",
+				"es": "una leyenda"
+			},
+			{
+				"de": "obwohl",
+				"es": "aunque"
+			},
+			{
+				"de": "der Friede",
+				"es": "la paz"
+			},
+			{
+				"de": "jdm. auffallen",
+				"es": "llamar la atención a alguien"
+			},
+			{
+				"de": "etw. / jdn. beobachten",
+				"es": "observar algo / a alguien"
+			},
+			{
+				"de": "eine Ausstellung",
+				"es": "una exposición"
+			},
+			{
+				"de": "durch",
+				"es": "por"
+			},
+			{
+				"de": "gefährlich",
+				"es": "peligroso, -a"
+			},
+			{
+				"de": "etw. wieder tun",
+				"es": "volver (-ue-) a hacer algo"
+			},
+			{
+				"de": "etw. schreien",
+				"es": "gritar algo"
+			}
+		]
+	}
+}
