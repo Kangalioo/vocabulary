@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.HashMap;
+import java.util.Arrays;
 
 public class Parser {
 	private Vocabulary vocabulary = new Vocabulary();
@@ -118,7 +119,10 @@ public class Parser {
 		for (String string : array) {
 			int a = string.indexOf("{");
 			int b = string.indexOf("}");
-			if (a == -1 || b == -1 || b < a) continue;
+			if (a == -1 || b == -1 || b < a) {
+				result.add(string);
+				continue;
+			}
 			String template = string.substring(a + 1, b);
 			String[] replacements = templates.get(template);
 			if (replacements == null) {
@@ -131,8 +135,13 @@ public class Parser {
 			for (int i = 0; i < results.length; i++) {
 				results[i] = preTemplate + replacements[i] + postTemplate;
 			}
+			results = addExtensions(results);
 			for (String s : results) result.add(s);
 		}
 		return result.toArray(new String[result.size()]);
 	}
+	
+	//~ private void test() {
+		//~ System.out.println(Arrays.toString(addExtensions(new String[]{"hallo", "etw", "{etw}", "{o}_{e}", "distint{o}"})));
+	//~ }
 }

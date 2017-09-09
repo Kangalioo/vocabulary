@@ -5,7 +5,7 @@ import java.util.LinkedList;
 
 public class SmartAlgorithm extends LearningAlgorithm {
 	// How many answers for each word are remembered
-	public static final int MEMORY_SIZE = 6;
+	public static final int MEMORY_SIZE = 2;
 	
 	
 	// I would have written List<List<...>>, but the compiler didn't allow it.

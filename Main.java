@@ -5,7 +5,7 @@ import java.util.Arrays;
 
 public class Main {
 	public static final String JSON_FILE = "vocabulary.json";
-	public static final boolean USE_GUI = false;
+	public static final boolean USE_GUI = true;
 	
 	private static Vocabulary vocabulary;
 	
