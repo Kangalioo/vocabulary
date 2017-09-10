@@ -65,7 +65,7 @@
 			},
 			{
 				"de": "entsprechend",
-				"es": "correspondiente"
+				"es": "correspondient{e}"
 			},
 			{
 				"de": "unterstreichen",
@@ -77,7 +77,7 @@
 			},
 			{
 				"de": "unbekannt",
-				"es": "desconocido"
+				"es": "desconocid{o}"
 			},
 			{
 				"de": "die Lösung",
@@ -147,7 +147,7 @@
 				"es": "correr"
 			}
 		],
-		"Unidad 1 - Primer paso: En el barrio La Latina": [
+		"Unidad 1 — Primer paso: En el barrio La Latina": [
 			{
 				"de": "umziehen",
 				"es": "mudarse"
@@ -170,7 +170,7 @@
 			},
 			{
 				"de": "blind",
-				"es": "ciego"
+				"es": "cieg{o}"
 			},
 			{
 				"de": ["ein Senior", "ein alter Mann", "eine Seniorin", "eine alte Frau"],
@@ -198,7 +198,7 @@
 			},
 			{
 				"de": "verheiratet sein",
-				"es": "estar casado"
+				"es": "estar casad{o}"
 			},
 			{
 				"de": "ein Lotterielos",
@@ -266,7 +266,7 @@
 			},
 			{
 				"de": "positiv",
-				"es": "positivo"
+				"es": "positiv{o}"
 			},
 			{
 				"de": "etwas versuchen",
@@ -312,7 +312,7 @@
 			},
 			{
 				"de": ["unartig", "böse"],
-				"es": "malo"
+				"es": "mal{o}"
 			},
 			{
 				"de": "funktionieren",
@@ -320,7 +320,7 @@
 			},
 			{
 				"de": "kompliziert",
-				"es": "complicado"
+				"es": "complicad{o}"
 			},
 			{
 				"de": ["etwas bemerken", "jemanden bemerken"],
@@ -359,7 +359,7 @@
 			},
 			{
 				"de": ["anders", "unterschiedlich"],
-				"es": "distinto"
+				"es": "distint{o}"
 			},
 			{
 				"de": "nur Mut!",
@@ -374,7 +374,7 @@
 			},
 			{
 				"de": "aufmerksam",
-				"es": "atento"
+				"es": "atent{o}"
 			},
 			{
 				"de": ["ein Apparat", "ein Gerät"],
@@ -408,7 +408,7 @@
 			},
 			{
 				"de": "verrückt sein",
-				"es": "estar loco"
+				"es": "estar loc{o}"
 			},
 			{
 				"de": "eine Schule",
@@ -439,7 +439,7 @@
 			},
 			{
 				"de": ["brav", "gutmütig"],
-				"es": "bueno"
+				"es": "buen{o}"
 			},
 			{
 				"de": "jemanden verrückt machen",
@@ -564,7 +564,7 @@
 				"es": "solo, -a"
 			}
 		],
-		"Unidad 3 – Texto – Conversación de vecinos": [
+		"Unidad 3 – Texto: Conversación de vecinos": [
 			{
 				"de": "etw. mieten; jdm. etw. vermieten",
 				"es": "alquilar algo a alguien"
