@@ -5,8 +5,11 @@ import java.util.Arrays;
 
 public class Main {
 	public static final String JSON_FILE = "vocabulary.json";
+	public static final boolean USE_GUI = true;
 	
 	private static Vocabulary vocabulary;
+	
+	private static LearningAlgorithm algorithm;
 	
 	
 	public static void main(String[] args) {
@@ -18,28 +21,21 @@ public class Main {
 		}
 	}
 	
-	private static String colored(String string, int color) {
-		return setColor(color) + string + setColor(-1);
-	}
-	
-	private static String setColor(int color) {
-		if (color == -1) color = 39;
-		else if (color < 8) color = 30 + color;
-		else color = 90 + color - 8;
-		
-		return setAttribute(color);
-	}
-	
-	private static String setAttribute(int number) {
-		return "\u001b[" + number + "m";
-	}
-	
 	private static void start() {
-		LearningAlgorithm algorithm = new SmartAlgorithm(pickSection().getWords());
+		algorithm = new SmartAlgorithm(pickSection().getWords());
 		System.out.println();
-		while (true) {
-			if (askWord(algorithm)) break;
+		if (USE_GUI) {
+			System.out.println("Starting GUI.");
+			javafx.application.Application.launch(MyApplication.class);
+		} else {
+			while (true) {
+				if (askWord(algorithm)) break;
+			}
 		}
+	}
+	
+	static LearningAlgorithm getAlgorithm() {
+		return algorithm;
 	}
 	
 	private static Section pickSection() {
@@ -59,16 +55,16 @@ public class Main {
 	
 	private static boolean askWord(LearningAlgorithm algorithm) {
 		Word word = algorithm.pickWord();
-		System.out.print(setColor(11) + word.getPrimaryString() + " - " + setColor(-1));
+		System.out.print(Colorer.setColor(11) + word.getPrimaryString() + " - " + Colorer.setColor(-1));
 		String answer = System.console().readLine();
 		if (answer.equals("exit")) return true;
 		boolean correct = word.isSecondaryCorrect(answer);
 		if (correct) {
-			System.out.println(colored("Correct!", 10));
+			System.out.println(Colorer.colored("Correct!", 10));
 		} else {
-			System.out.println(colored("Wrong! ", 9) + setAttribute(1) + word.getSecondaryString() + setAttribute(0) + ".");
+			System.out.println(Colorer.colored("Wrong! ", 9) + Colorer.setAttribute(1) + word.getSecondaryString() + Colorer.setAttribute(0) + ".");
 		}
-		System.out.println(colored("Press enter to continue.", 8));
+		System.out.println(Colorer.colored("Press enter to continue.", 8));
 		System.console().readLine();
 		algorithm.processAnswer(word, correct);
 		

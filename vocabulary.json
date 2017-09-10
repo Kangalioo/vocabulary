@@ -4,6 +4,13 @@
 	"secondary": "es",
 	"secondaryDisplay": "spanisch",
 	
+	"templates": {
+		"o": ["a", "o", "as", "os"],
+		"e": ["e", "es"],
+		"jdn": ["jdn.", "jemanden"],
+		"jdm": ["jdm.", "jemandem"],
+		"etw": ["etw.", "etwas"]
+	},
 	"sections": {
 		"_Nuevas palabras": [
 			{
@@ -20,7 +27,7 @@
 			},
 			{
 				"de": "unterschiedlich",
-				"es": ["distinto", "distinta"]
+				"es": "distint{o}"
 			},
 			{
 				"de": {
@@ -58,7 +65,7 @@
 			},
 			{
 				"de": "entsprechend",
-				"es": "correspondiente"
+				"es": "correspondient{e}"
 			},
 			{
 				"de": "unterstreichen",
@@ -70,7 +77,7 @@
 			},
 			{
 				"de": "unbekannt",
-				"es": "desconocido"
+				"es": "desconocid{o}"
 			},
 			{
 				"de": "die Lösung",
@@ -140,13 +147,13 @@
 				"es": "correr"
 			}
 		],
-		"Unidad 1 - Primer paso: En el barrio La Latina": [
+		"Unidad 1 — Primer paso: En el barrio La Latina": [
 			{
 				"de": "umziehen",
 				"es": "mudarse"
 			},
 			{
-				"de": "sich um jdn. kümmern",
+				"de": "sich um jemanden kümmern",
 				"es": "cuidar a alguien"
 			},
 			{
@@ -154,23 +161,23 @@
 				"es": "un quiosco"
 			},
 			{
-				"de": "ein Kindergarten, eine Kinderkrippe",
+				"de": ["ein Kindergarten", "eine Kinderkrippe"],
 				"es": "una guardería"
 			},
 			{
-				"de": "jdm. etw. berechnen, von jdm. etw. verlangen",
+				"de": ["jdm. etw. berechnen", "von jdm. etw. verlangen"],
 				"es": "cobrar algo a alguien"
 			},
 			{
 				"de": "blind",
-				"es": "ciego, -a"
+				"es": "cieg{o}"
 			},
 			{
-				"de": "ein Senior, ein alter Mann; eine Seniorin, eine alte Frau",
-				"es": "un anciano, una anciana"
+				"de": ["ein Senior", "ein alter Mann", "eine Seniorin", "eine alte Frau"],
+				"es": ["un anciano", "una anciana"]
 			},
 			{
-				"de": "jdm. sehr gefallen",
+				"de": "jemandem sehr gefallen",
 				"es": "molar a alguien"
 			},
 			{
@@ -190,28 +197,34 @@
 				"es": "la fiebre"
 			},
 			{
-				"de": "verheiratet (sein)",
-				"es": "(estar) casado, -a"
+				"de": "verheiratet sein",
+				"es": "estar casad{o}"
 			},
 			{
 				"de": "ein Lotterielos",
 				"es": "un billete de lotería"
 			},
 			{
-				"de": "etw. anfangen, etw. beginnen",
-				"es": "comenzar (-ie-) algo"
+				"de": ["etwas anfangen", "etwas beginnen"],
+				"es": {
+					"word": "comenzar algo",
+					"display": "comenzar (-ie-) algo"
+				}
 			},
 			{
-				"de": "jdn. um etw. bitten",
-				"es": "pedir (-i-/-i-) algo a alguien"
+				"de": "jemanden um etwas bitten",
+				"es": {
+					"word": "pedir algo a alguien",
+					"display": "pedir (-i-/-i-) algo a alguien"
+				}
 			},
 			{
-				"de": "ein Guatemalteke, eine Guatemaltekin",
-				"es": "un guatemalteco, una guatemalteca"
+				"de": ["ein Guatemalteke", "eine Guatemaltekin"],
+				"es": ["un guatemalteco", "una guatemalteca"]
 			},
 			{
 				"de": "eine Hausfrau",
-				"es": "un amade casa"
+				"es": "un ama de casa"
 			},
 			{
 				"de": "das Taschengeld",
@@ -236,7 +249,7 @@
 		],
 		"Unidad 1 – Texto: El primer día": [
 			{
-				"de": "sich über etw. ärgern",
+				"de": "sich über etwas ärgern",
 				"es": "enfadarse por algo"
 			},
 			{
@@ -253,10 +266,10 @@
 			},
 			{
 				"de": "positiv",
-				"es": "positivo, -a"
+				"es": "positiv{o}"
 			},
 			{
-				"de": "etw. versuchen",
+				"de": "etwas versuchen",
 				"es": "intentar algo"
 			},
 			{
@@ -268,8 +281,11 @@
 				"es": "la cara"
 			},
 			{
-				"de": "etw. anschalten",
-				"es": "encender (-ie-) algo"
+				"de": "etwas anschalten",
+				"es": {
+					"word": "encender algo",
+					"display": "encender (-ie-) algo"
+				}
 			},
 			{
 				"de": "ein Film",
@@ -284,7 +300,10 @@
 				"es": "una provincia"
 			},
 			{
-				"de": "auf zu ...",
+				"de": {
+					"word": "auf zu",
+					"display": "auf zu ..."
+				},
 				"es": "a por"
 			},
 			{
@@ -292,8 +311,8 @@
 				"es": "la tele"
 			},
 			{
-				"de": "unartig, böse",
-				"es": "malo, -a"
+				"de": ["unartig", "böse"],
+				"es": "mal{o}"
 			},
 			{
 				"de": "funktionieren",
@@ -301,18 +320,18 @@
 			},
 			{
 				"de": "kompliziert",
-				"es": "complicado, -a"
+				"es": "complicad{o}"
 			},
 			{
-				"de": "etw. / jdn. bemerken",
-				"es": "notar algo / a alguien"
+				"de": ["etwas bemerken", "jemanden bemerken"],
+				"es": ["notar algo", "notar a alguien"]
 			},
 			{
 				"de": "ein Löwe",
 				"es": "un león"
 			},
 			{
-				"de": "eine DVD; ein DVD-Player",
+				"de": ["eine DVD", "ein DVD-Player"],
 				"es": "un DVD"
 			},
 			{
@@ -325,7 +344,10 @@
 			},
 			{
 				"de": "nur Bahnhof verstehen",
-				"es": "no entender (-ie-) ni papa"
+				"es": {
+					"word": "no entender ni papa",
+					"display": "no entender (-ie-) ni papa"
+				}
 			},
 			{
 				"de": "Spaß haben",
@@ -336,39 +358,48 @@
 				"es": "la sala de profesores"
 			},
 			{
-				"de": "anders, unterschiedlich",
-				"es": "distinto, -a"
+				"de": ["anders", "unterschiedlich"],
+				"es": "distint{o}"
 			},
 			{
 				"de": "nur Mut!",
 				"es": "¡ánimo!"
 			},
 			{
-				"de": "sich an etw. / jdn. erinnern",
-				"es": "acordarse (-ue-) de algo / alguien"
+				"de": ["sich an etwas erinnern", "sich an jemanden erinnern"],
+				"es": {
+					"word": ["acordarse de algo", "acordarse de alguien"],
+					"display": "acordarse (-ue-) de algo / alguien"
+				}
 			},
 			{
 				"de": "aufmerksam",
-				"es": "atento, -a"
+				"es": "atent{o}"
 			},
 			{
-				"de": "ein Apparat, ein Gerät",
+				"de": ["ein Apparat", "ein Gerät"],
 				"es": "un aparato"
 			},
 			{
-				"de": "immer (+ Steigerungsform des Adj.), immer mehr (+ Subst.)",
+				"de": {
+					"word": ["immer", "immer mehr"],
+					"display": "immer (+ Steigerungsform des Adj.), immer mehr (+ Subst.)"
+				},
 				"es": "cada vez más"
 			},
 			{
-				"de": "etw. ausschalten",
+				"de": "etwas ausschalten",
 				"es": "apagar algo"
 			},
 			{
-				"de": "sich etw. / jdm. nähern",
-				"es": "acercarse a algo / alguien"
+				"de": ["sich etwas nähern", "sich jemandem nähern"],
+				"es": ["acercarse a algo", "acercarse a alguien"]
 			},
 			{
-				"de": "zu (+ adj.), zuviel",
+				"de": {
+					"word": ["zu", "zuviel"],
+					"display": "zu (+ adj.), zuviel"
+				},
 				"es": "demasiado"
 			},
 			{
@@ -376,24 +407,27 @@
 				"es": "un acento"
 			},
 			{
-				"de": "verrückt (sein)",
-				"es": "(estar) loco, -a"
+				"de": "verrückt sein",
+				"es": "estar loc{o}"
 			},
 			{
 				"de": "eine Schule",
 				"es": "un colegio"
 			},
 			{
-				"de": "da, weil",
-				"es": "como (Konj.)"
+				"de": ["da", "weil"],
+				"es": "como"
 			},
 			{
-				"de": "eine Technik, eine Technologie",
+				"de": ["eine Technik", "eine Technologie"],
 				"es": "una tecnología"
 			},
 			{
-				"de": "in etw. (hinein)passen",
-				"es": "caber (1ª pers. quepo) en algo"
+				"de": "in etwas (hinein)passen",
+				"es": {
+					"word": "caber en algo",
+					"display": "caber (1ª pers. quepo) en algo"
+				}
 			},
 			{
 				"de": "nicht einmal",
@@ -404,12 +438,12 @@
 				"es": "antes"
 			},
 			{
-				"de": "brav; gutmütig",
-				"es": "bueno, -a"
+				"de": ["brav", "gutmütig"],
+				"es": "buen{o}"
 			},
 			{
-				"de": "jdn. verrückt machen",
-				"es": "tener loco, -a a alguien"
+				"de": "jemanden verrückt machen",
+				"es": "tener loco a alguien"
 			},
 			{
 				"de": "eine Möglichkeit",
@@ -530,7 +564,7 @@
 				"es": "solo, -a"
 			}
 		],
-		"Unidad 3 – Texto – Conversación de vecinos": [
+		"Unidad 3 – Texto: Conversación de vecinos": [
 			{
 				"de": "etw. mieten; jdm. etw. vermieten",
 				"es": "alquilar algo a alguien"

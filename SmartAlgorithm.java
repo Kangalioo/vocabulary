@@ -3,37 +3,97 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
+/**
+ * This is a learning algorithm which tries to optimize the asking order
+ * of the words to boost learning speed. It does that in three ways:
+ * <ol>
+ * <li>Keep track when words were asked: if a specific word was not
+ * tested for some time, its priority goes up.
+ * </li>
+ * <li>The last <code>MEMORY_SIZE</code> answers are saved. This data is
+ * used to ensure that words which were not answered correctly get
+ * higher priority that words the user masters.
+ * </li>
+ * <li>
+ * </li>
+ * </ol>
+ */
 public class SmartAlgorithm extends LearningAlgorithm {
-	// How many answers for each word are remembered
-	public static final int MEMORY_SIZE = 6;
+	private class Instance {
+		public Word word;
+		private int lastCallingTime = 0;
+		private LinkedList<Boolean> history = new LinkedList<>();
+		
+		
+		public Instance(Word word) {
+			this.word = word;
+			for (int i = 0; i < MEMORY_SIZE; i++) history.add(true);
+		}
+		
+		public void call() {
+			this.lastCallingTime = SmartAlgorithm.this.wordsAsked;
+		}
+		
+		public int timeSinceLastCall() {
+			return SmartAlgorithm.this.wordsAsked - lastCallingTime;
+		}
+		
+		public void processAnswer(boolean correct) {
+			history.offer(correct);
+			history.removeFirst();
+		}
+		
+		public int correctAnswers() {
+			return Collections.frequency(history, true);
+		}
+	}
+	
+	// n answers are remembered
+	public static final int MEMORY_SIZE = 2;
+	// An always wrong word comes n times more often than an always
+	// right word.
+	public static final double FITNESS_BASE = 5;
+	// The priority gets multiplied by n on every question until it
+	// gets asked itself, then it resets.
+	public static final double REFRESH_BASE = 1.1;
 	
 	
-	// I would have written List<List<...>>, but the compiler didn't allow it.
-	private List<LinkedList<Boolean>> levels = new ArrayList<LinkedList<Boolean>>();
+	private int wordsAsked = 0;
+	private List<Instance> instances;
 	
 	
 	public SmartAlgorithm(List<Word> v) {
 		super(v);
-		for (int i = 0; i < amount(); i++) {
-			LinkedList<Boolean> list = new LinkedList<>();
-			levels.add(list);
-			for (int j = 0; j < MEMORY_SIZE; j++) {
-				list.add(false);
-			}
-		}
+		instances = new ArrayList<Instance>(amount());
+		getWords().forEach(word -> instances.add(new Instance(word)));
 	}
 	
 	public int pick() {
-		double[] priorities = new double[levels.size()];
-		double sum = 0;
+		double[] priorities = new double[instances.size()];
 		for (int i = 0; i < priorities.length; i++) {
-			double result = Collections.frequency(levels.get(i), true);
+			Instance instance = instances.get(i);
+			double result = instance.correctAnswers();
 			
-			result = MEMORY_SIZE - result + 1; // ~~~ THE FORMULA ~~~
+			// ~~~ THE FORMULA ~~~
+			result = Math.pow(FITNESS_BASE,
+				(double) (MEMORY_SIZE - result) / MEMORY_SIZE);
+			result *= Math.pow(REFRESH_BASE,
+				instance.timeSinceLastCall());
 			
 			priorities[i] = result;
-			sum += result;
 		}
+		
+		System.out.println(java.util.Arrays.toString(priorities));
+		System.out.println();
+		wordsAsked++;
+		int choice = weightedRandom(priorities);
+		instances.get(choice).call();
+		return choice;
+	}
+	
+	private int weightedRandom(double[] priorities) {
+		double sum = 0;
+		for (double d : priorities) sum += d;
 		double random = Math.random() * sum;
 		
 		int index = -1;
@@ -50,9 +110,6 @@ public class SmartAlgorithm extends LearningAlgorithm {
 	}
 	
 	public void processAnswer(int index, boolean answer) {
-		LinkedList<Boolean> list = levels.get(index);
-		list.offer(answer);
-		list.removeFirst();
+		instances.get(index).processAnswer(answer);
 	}
 }
-
