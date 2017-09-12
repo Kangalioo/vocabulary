@@ -5,14 +5,15 @@
 	"secondaryDisplay": "spanisch",
 	
 	"templates": {
-		"o": ["a", "o", "as", "os"],
+		"o": ["o", "a", "os", "as"],
 		"e": ["e", "es"],
+		"alg": ["alguien", "algo"],
 		"jdn": ["jdn.", "jemanden"],
 		"jdm": ["jdm.", "jemandem"],
 		"etw": ["etw.", "etwas"]
 	},
 	"sections": {
-		"_Nuevas palabras": [
+		"-Nuevas palabras 1": [
 			{
 				"de": ["das wäre genial", "es wäre genial"],
 				"es": "sería genial"
@@ -145,6 +146,153 @@
 			{
 				"de": "laufen",
 				"es": "correr"
+			}
+		],
+		"-Nuevas palabras 2": [
+			{
+				"de": "verneinen",
+				"es": "negar"
+			},
+			{
+				"de": ["der Fußballer", "der Fußballspieler"],
+				"es": "el futbolista"
+			},
+			{
+				"de": "gewinnen",
+				"es": "ganar"
+			},
+			{
+				"de": "verlieren",
+				"es": "perder"
+			},
+			{
+				"de": "die Schildkröte",
+				"es": "la tortuga"
+			},
+			{
+				"de": "der Treffpunkt",
+				"es": "el lugar de encuentro"
+			},
+			{
+				"de": ["erzählen", "berichten"],
+				"es": "contar"
+			},
+			{
+				"de": "der Bär",
+				"es": "el oso"
+			},
+			{
+				"de": "der Wecker",
+				"es": "el despertador"
+			},
+			{
+				"de": "aus dem Bett springen",
+				"es": "saltar de la cama"
+			},
+			{
+				"de": {
+					"display": "die (Hand)Tasche, die (Plastik)Tasche",
+					"word": ["die Tasche", "die Handtasche", "die Plastiktasche", "die (Hand)Tasche", "die (Plastik)Tasche"]
+				},
+				"es": {
+					"display": "el bolso (z.B. Handtasche), la bolsa (z.B. Plastiktasche)",
+					"word": ["el bolso", "la bolsa"]
+				}
+			},
+			{
+				"de": "sich mit Freunden treffen",
+				"es": "quedar con amigos"
+			},
+			{
+				"de": ["schrecklich", "furchbar"],
+				"es": "terrible"
+			},
+			{
+				"de": "pünktlich sein",
+				"es": "ser puntual"
+			},
+			{
+				"de": "die Jeans",
+				"es": "los vaqueros"
+			},
+			{
+				"de": "schmutzig",
+				"es": "suci{o}"
+			},
+			{
+				"de": "sauber",
+				"es": "limpi{o}"
+			},
+			{
+				"de": "schwimmen",
+				"es": "nadar"
+			},
+			{
+				"de": ["Sport treiben", "Sport machen"],
+				"es": "hacer deporte"
+			},
+			{
+				"de": {
+					"display": "der/das Basketball (als Sportart)",
+					"word": ["der Basketball", "das Basketball"]
+				},
+				"es": "el baloncesto"
+			},
+			{
+				"de": {
+					"display": "der Basketball (als Ball)",
+					"word": "der Basketball"
+				},
+				"es": "la pelota de baloncesto"
+			},
+			{
+				"de": ["besuchen", "besichtigen"],
+				"es": "visitar"
+			},
+			{
+				"de": "den ganzen Tag",
+				"es": "todo el día"
+			},
+			{
+				"de": "das Cello",
+				"es": ["el violinchelo", "el chelo", "el cello"]
+			},
+			{
+				"de": "das Klavier",
+				"es": "el piano"
+			},
+			{
+				"de": "zelten",
+				"es": "hacer camping"
+			},
+			{
+				"de": "das Zelt",
+				"es": "la tienda de campaña"
+			},
+			{
+				"de": "ins Konzert gehen",
+				"es": "asistir a un concierto"
+			},
+			{
+				"de": "ein Konzert geben",
+				"es": "dar un concierto"
+			},
+			{
+				"de": {
+					"display": "proben (Theater, Auftritt)",
+					"word": "proben"
+				},
+				"es": "ensayar"
+			},
+			{
+				"de": {
+					"display": "Fotos von jdm./etw. machen",
+					"word": ["Fotos von {jdm} machen", "Fotos von {etw} machen"]
+				},
+				"es": {
+					"display": "tirar fotos de alguien/algo",
+					"word": "tirar fotos de {alg}"
+				}
 			}
 		],
 		"Unidad 1 — Primer paso: En el barrio La Latina": [
@@ -872,6 +1020,20 @@
 			{
 				"de": "etw. schreien",
 				"es": "gritar algo"
+			}
+		],
+		"~Test": [
+			{
+				"de": "reden",
+				"es": "hablar"
+			},
+			{
+				"de": "essen",
+				"es": "comer"
+			},
+			{
+				"de": "sehen",
+				"es": ["ver", "mirar"]
 			}
 		]
 	}

@@ -1,6 +1,7 @@
 import com.eclipsesource.json.*;
 import java.io.IOException;
-import java.io.FileReader;
+import java.io.InputStreamReader;
+import java.io.FileInputStream;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Map;
@@ -15,7 +16,11 @@ public class Parser {
 	private Map<String, String[]> templates = new HashMap<>();
 	
 	private Parser(String file) throws IOException {
-		JsonValue rawRoot = Json.parse(new FileReader(file));
+		// I really don't understand why Micro&soft is incapable of changing
+		// their encoding to UTF-8 systemwide...
+		// UTF-8 > everything else
+		JsonValue rawRoot = Json.parse(
+			new InputStreamReader(new FileInputStream(file), "UTF-8"));
 		if (rawRoot.isObject()) {
 			root = rawRoot.asObject();
 		} else {
@@ -37,8 +42,10 @@ public class Parser {
 	}
 	
 	private void parseLangInformation() {
-		primary = root.getString("primary", "primary"); // get key "primary", return "primary" if not existing
-		secondary = root.getString("secondary", "secondary"); // get key "secondary", return "secondary" if not existing
+		// get key "primary", return "primary" if not existing
+		// get key "secondary", return "secondary" if not existing
+		primary = root.getString("primary", "primary");
+		secondary = root.getString("secondary", "secondary");
 		String primaryDisplay = root.getString("primaryDisplay", primary);
 		String secondaryDisplay = root.getString("secondaryDisplay", secondary);
 		vocabulary.setLangInformation(primaryDisplay, secondaryDisplay);
@@ -54,7 +61,9 @@ public class Parser {
 			} else if (value.isArray()) {
 				List<JsonValue> stringValueList = value.asArray().values();
 				List<String> stringList = new ArrayList<>();
-				for (JsonValue v : stringValueList) stringList.add(v.asString());
+				for (JsonValue v : stringValueList) {
+					stringList.add(v.asString());
+				}
 				valueArray = stringList.toArray(new String[stringList.size()]);
 			}
 			templates.put(member.getName(), valueArray);
@@ -64,7 +73,8 @@ public class Parser {
 	private void parseSections() {
 		JsonObject sections = root.get("sections").asObject();
 		for (JsonObject.Member member : sections) {
-			vocabulary.addSection(parseSection(new Section(member.getName()), member.getValue().asArray()));
+			vocabulary.addSection(parseSection(
+				new Section(member.getName()), member.getValue().asArray()));
 		}
 	}
 	
@@ -126,7 +136,8 @@ public class Parser {
 			String template = string.substring(a + 1, b);
 			String[] replacements = templates.get(template);
 			if (replacements == null) {
-				System.err.println("Template \"" + template + "\" does not exist.");
+				System.err.println("Template \"" + template +
+					"\" does not exist.");
 				continue;
 			}
 			String[] results = new String[replacements.length];
@@ -142,6 +153,7 @@ public class Parser {
 	}
 	
 	//~ private void test() {
-		//~ System.out.println(Arrays.toString(addExtensions(new String[]{"hallo", "etw", "{etw}", "{o}_{e}", "distint{o}"})));
+		//~ System.out.println(Arrays.toString(addExtensions(
+			//~ new String[]{"hallo", "etw", "{etw}", "{o}_{e}", "distint{o}"})));
 	//~ }
 }

@@ -22,12 +22,18 @@ public class SmartAlgorithm extends LearningAlgorithm {
 	private class Instance {
 		public Word word;
 		private int lastCallingTime = 0;
+		private boolean isNew;
 		private LinkedList<Boolean> history = new LinkedList<>();
 		
 		
-		public Instance(Word word) {
+		public Instance(Word word, boolean isNew) {
 			this.word = word;
-			for (int i = 0; i < MEMORY_SIZE; i++) history.add(true);
+			this.isNew = isNew;
+			for (int i = 0; i < MEMORY_SIZE; i++) {
+				// // If the word is now, the answer should NOT be correct,
+				// so the history gets prefilled with wrong answers
+				history.add(!isNew);
+			}
 		}
 		
 		public void call() {
@@ -38,56 +44,100 @@ public class SmartAlgorithm extends LearningAlgorithm {
 			return SmartAlgorithm.this.wordsAsked - lastCallingTime;
 		}
 		
-		public void processAnswer(boolean correct) {
-			history.offer(correct);
-			history.removeFirst();
+		public boolean lastAnswer() {
+			return history.get(0);
 		}
 		
-		public int correctAnswers() {
-			return Collections.frequency(history, true);
+		public void processAnswer(boolean correct) {
+			history.offerFirst(correct);
+			history.removeLast();
+		}
+		
+		public double priority() {
+			double sum = 0;
+			double currentFactor = 1;
+			double sumOfFactors = 0;
+			for (boolean b : history) {
+				sumOfFactors += currentFactor;
+				if (b) sum += currentFactor;
+				currentFactor *= HISTORY_BASE;
+			}
+			double result = sum / sumOfFactors;
+			
+			result = Math.pow(FITNESS_BASE,
+				(double) (sumOfFactors - sum) / sumOfFactors);
+			result *= Math.pow(
+				(lastAnswer() == false) ? DYNAMIC_REFRESH_BASE : REFRESH_BASE,
+				timeSinceLastCall());
+			
+			return result;
 		}
 	}
 	
-	// n answers are remembered
-	public static final int MEMORY_SIZE = 2;
+	// n answers are remembered per word
+	public static final int MEMORY_SIZE = 3;
+	// (Exponential) decrease in history priority
+	public static final double HISTORY_BASE = 0.8;
 	// An always wrong word comes n times more often than an always
 	// right word.
-	public static final double FITNESS_BASE = 5;
+	public static final double FITNESS_BASE = 15;
 	// The priority gets multiplied by n on every question until it
 	// gets asked itself, then it resets.
 	public static final double REFRESH_BASE = 1.1;
+	// REFRESH_BASE for words whose last answer was wrong ("new" words".
+	// The "dynamic", because the more words there are the higher the value gets
+	// to ensure that "new" words take (roughly) the same time to repeat.
+	public static final double DYNAMIC_REFRESH_BASE = 2;
+	// Number of words the user must be able to
+	// remember until he answers them correctly.
+	public static final int MAX_NEW_WORDS = 2;
 	
 	
 	private int wordsAsked = 0;
+	private int lastChoice = -1;
 	private List<Instance> instances;
+	private boolean areWordsNew;
 	
+	
+	public SmartAlgorithm(List<Word> v, boolean areWordsNew) {
+		super(v);
+		this.areWordsNew = areWordsNew;
+		instances = new ArrayList<Instance>(amount());
+		getWords().forEach(word -> instances.add(new Instance(word, areWordsNew)));
+	}
 	
 	public SmartAlgorithm(List<Word> v) {
-		super(v);
-		instances = new ArrayList<Instance>(amount());
-		getWords().forEach(word -> instances.add(new Instance(word)));
+		this(v, true);
 	}
 	
 	public int pick() {
+		//~ int newWords = instances.stream()
+			//~ .filter(e -> e.lastAnswer() == false)
+			//~ .count();
+		
+		int newWords = 0;
 		double[] priorities = new double[instances.size()];
 		for (int i = 0; i < priorities.length; i++) {
-			Instance instance = instances.get(i);
-			double result = instance.correctAnswers();
-			
-			// ~~~ THE FORMULA ~~~
-			result = Math.pow(FITNESS_BASE,
-				(double) (MEMORY_SIZE - result) / MEMORY_SIZE);
-			result *= Math.pow(REFRESH_BASE,
-				instance.timeSinceLastCall());
-			
-			priorities[i] = result;
+			priorities[i] = instances.get(i).priority();
+			if (instances.get(i).lastAnswer() == false) {
+				if (newWords >= MAX_NEW_WORDS) priorities[i] = 0;
+				newWords++;
+			}
+			if (lastChoice == i) priorities[i] = 0;
 		}
 		
-		System.out.println(java.util.Arrays.toString(priorities));
+		// REMEMBER
+		for (double d : priorities) {
+			System.out.print(Math.round(d * 100) / 100.0 + ", ");
+		}
+		
 		System.out.println();
+		
 		wordsAsked++;
 		int choice = weightedRandom(priorities);
 		instances.get(choice).call();
+		
+		lastChoice = choice;
 		return choice;
 	}
 	

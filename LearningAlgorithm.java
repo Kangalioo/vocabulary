@@ -37,7 +37,8 @@ public abstract class LearningAlgorithm {
 	public void processAnswer(Word word, boolean answer) {
 		int index = words.indexOf(word);
 		if (index == -1) {
-			throw new IllegalStateException("The given word does not exist in the database.");
+			throw new IllegalStateException(
+				"The given word does not exist in the database.");
 		}
 		processAnswer(index, answer);
 	}
