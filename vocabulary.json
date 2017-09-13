@@ -5,12 +5,27 @@
 	"secondaryDisplay": "spanisch",
 	
 	"templates": {
-		"o": ["o", "a", "os", "as"],
+		"o": {
+			"display": "o, -a",
+			"word": ["o", "a", "os", "as"]
+		},
 		"e": ["e", "es"],
-		"alg": ["alguien", "algo"],
-		"jdn": ["jdn.", "jemanden"],
-		"jdm": ["jdm.", "jemandem"],
-		"etw": ["etw.", "etwas"]
+		"alg": {
+			"display": "algo / alguien",
+			"word": ["alguien", "algo"]
+		},
+		"jdn": {
+			"display": "jdn.",
+			"word": ["jdn.", "jemanden"]
+		},
+		"jdm": {
+			"display": "jdm.",
+			"word": ["jdm.", "jemandem"]
+		},
+		"etw": {
+			"display": "etw.",
+			"word": ["etw.", "etwas"]
+		}
 	},
 	"sections": {
 		"-Nuevas palabras 1": [
@@ -600,27 +615,30 @@
 		],
 		"Unidad 2 – Texto: Todos me quieren tomar el pelo": [
 			{
-				"de": "ein Junge, ein Bursche, eine junge Frau",
-				"es": "un chaval, una chavala"
+				"de": ["ein Junge", "ein Bursche", "eine junge Frau"],
+				"es": ["un chaval", "una chavala"]
 			},
 			{
-				"de": "etw. hoffen",
+				"de": "{etw} hoffen",
 				"es": "esperar algo"
 			},
 			{
-				"de": "jdm. etw. befehlen; das Sagen haben",
-				"es": "mandar (algo a alguien)"
+				"de": {
+					"display": "jmd. etw. befehlen, das Sagen haben",
+					"word": ["{jdm} {etw} befehlen", "das Sagen haben"]
+				},
+				"es": "mandar algo a alguien"
 			},
 			{
 				"de": "ein Casting",
 				"es": "un casting"
 			},
 			{
-				"de": "jdn. auf den Arm nehmen",
+				"de": "{jdn} auf den Arm nehmen",
 				"es": "tomar el pelo a alguien"
 			},
 			{
-				"de": "groß, großartig",
+				"de": ["groß", "großartig"],
 				"es": "gran"
 			},
 			{
@@ -628,15 +646,24 @@
 				"es": "un pendiente"
 			},
 			{
-				"de": "ein Film",
+				"de": {
+					"display": "ein Film (Kurzform)",
+					"word": "ein Film"
+				},
 				"es": "una peli"
 			},
 			{
-				"de": "über etw. / jdn. lachen",
-				"es": "reírse de algo / alguien"
+				"de": {
+					"display": "über etw. / jdn. lachen",
+					"word": ["über {etw} lachen", "über {jdn} lachen"]
+				},
+				"es": "reírse de {alg}"
 			},
 			{
-				"de": "etw. (er)schaffen",
+				"de": {
+					"display": "etw. (er)schaffen",
+					"word": ["{etw} schaffen", "{etw} erschaffen"]
+				},
 				"es": "crear algo"
 			},
 			{
@@ -644,12 +671,12 @@
 				"es": "unas tijeras"
 			},
 			{
-				"de": "sich von jdm. trennen",
+				"de": "sich von {jdm} trennen",
 				"es": "separarse de alguien"
 			},
 			{
 				"de": "einzig",
-				"es": "único, -a"
+				"es": "únic{o}"
 			},
 			{
 				"de": "wegen",
@@ -668,48 +695,51 @@
 				"es": "un avatar"
 			},
 			{
-				"de": "ein Kumpel, ein Freund, eine Freundin",
-				"es": "un / una colega"
+				"de": ["ein Kumpel", "ein Freund", "eine Freundin"],
+				"es": ["un colega", "una colega"]
 			},
 			{
 				"de": "ein Scherz",
 				"es": "una broma"
 			},
 			{
-				"de": "ein Gymnasium",
+				"de": {
+					"display": "ein Gymnasium (Kurzform)",
+					"word": "ein Gymnasium"
+				},
 				"es": "un insti"
 			},
 			{
-				"de": "das Aussehen, das Äußere",
+				"de": ["das Aussehen", "das Äußere"],
 				"es": "el aspecto"
 			},
 			{
-				"de": "faul; ein Faulpelz",
-				"es": "vago, -a"
+				"de": ["faul", "ein Faulpelz"],
+				"es": "vag{o}"
 			},
 			{
-				"de": "etw. satt haben",
-				"es": "estar harto, -a de algo"
+				"de": "{etw} satt haben",
+				"es": "estar hart{o} de algo"
 			},
 			{
 				"de": "etw. (ab-)schneiden",
 				"es": "cortar algo"
 			},
 			{
-				"de": "ein Schauspieler, eine Schauspielerin",
-				"es": "un actor, una actriz"
+				"de": ["ein Schauspieler", "eine Schauspielerin"],
+				"es": ["un actor", "una actriz"]
 			},
 			{
-				"de": "ein Sachverhalt, eine Angelegenheit,",
+				"de": ["ein Sachverhalt", "eine Angelegenheit"],
 				"es": "un asunto"
 			},
 			{
-				"de": "arm, bedauernswert",
+				"de": ["arm", "bedauernswert"],
 				"es": "pobre"
 			},
 			{
 				"de": "einzig",
-				"es": "solo, -a"
+				"es": "sol{o}"
 			}
 		],
 		"Unidad 3 – Texto: Conversación de vecinos": [
