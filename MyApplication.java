@@ -42,44 +42,48 @@ public class MyApplication extends Application {
 		root = new StackPane();
 		
 		addElements();
+		addListeners();
 		loadWord();
 		
 		stage.setScene(new Scene(root, WINDOW_WIDTH, WINDOW_HEIGHT));
 		stage.show();
 	}
 	
-	private void addElements() {
+	private void addListeners() {
 		root.setOnKeyPressed(e -> {
 			if (e.getCode() == KeyCode.ENTER) {
 				buttonPress();
 			}
 		});
 		
-		textField = new TextField();
-		textField.setFont(new Font(50));
-		root.setAlignment(textField, Pos.BOTTOM_LEFT);
-		root.getChildren().add(textField);
-		
+		button.setOnMouseClicked(e -> {
+			buttonPress();
+		});
+	}
+	
+	private void addElements() {
 		text = new Text();
 		text.setFont(new Font(60));
-		root.setAlignment(text, Pos.TOP_CENTER);
-		root.setMargin(text, new Insets(20, 0, 0, 0));
 		root.getChildren().add(text);
+		StackPane.setAlignment(text, Pos.TOP_CENTER);
+		StackPane.setMargin(text, new Insets(20, 0, 0, 0));
+		
+		textField = new TextField();
+		textField.setFont(new Font(50));
+		root.getChildren().add(textField);
+		StackPane.setAlignment(textField, Pos.BOTTOM_LEFT);
 		
 		button = new Button("Submit");
 		button.setMinHeight(textField.getHeight());
 		button.setFont(new Font(40));
-		button.setOnMouseClicked(e -> {
-			buttonPress();
-		});
-		root.setAlignment(button, Pos.BOTTOM_RIGHT);
 		root.getChildren().add(button);
+		StackPane.setAlignment(button, Pos.BOTTOM_RIGHT);
 		
 		view = new ImageView();
 		view.setPreserveRatio(true);
 		view.setFitHeight(IMAGE_SIZE);
-		root.setAlignment(view, Pos.CENTER);
 		root.getChildren().add(view);
+		StackPane.setAlignment(view, Pos.CENTER);
 	}
 	
 	private void buttonPress() {
@@ -111,8 +115,8 @@ public class MyApplication extends Application {
 		if (!correct) {
 			solution = new Text(currentWord.getSecondaryString());
 			solution.setFont(new Font(50));
-			root.setAlignment(solution, Pos.CENTER);
-			root.setMargin(solution, new Insets(IMAGE_SIZE / 2 + 150, 0, 0, 0));
+			StackPane.setAlignment(solution, Pos.CENTER);
+			StackPane.setMargin(solution, new Insets(IMAGE_SIZE / 2 + 150, 0, 0, 0));
 			root.getChildren().add(solution);
 		}
 	}

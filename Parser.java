@@ -8,12 +8,14 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.Arrays;
 
+// Parser classes always get dirty when I code them... Perhaps of the huge
+// amount of edge cases a proper parser should be able to handle.
 public class Parser {
 	private Vocabulary vocabulary = new Vocabulary();
 	private JsonObject root;
 	private String primary, secondary;
 	
-	private Map<String, String[]> templates = new HashMap<>();
+	private Map<String, Word> templates = new HashMap<>();
 	
 	private Parser(String file) throws IOException {
 		// I really don't understand why Micro&soft is incapable of changing
@@ -56,6 +58,7 @@ public class Parser {
 		for (JsonObject.Member member : object) {
 			JsonValue value = member.getValue();
 			String[] valueArray = null;
+			Word templateWord = new Word();
 			if (value.isString()) {
 				valueArray = new String[]{value.asString()};
 			} else if (value.isArray()) {
@@ -65,8 +68,15 @@ public class Parser {
 					stringList.add(v.asString());
 				}
 				valueArray = stringList.toArray(new String[stringList.size()]);
+			} else if (value.isObject()) {
+				processRawWord(templateWord, value, true);
+			} else {
+				System.err.println("Invalid template format (template \"" +
+					member.getName() + "\")");
 			}
-			templates.put(member.getName(), valueArray);
+			
+			if (!value.isObject()) templateWord = new Word(valueArray, null);
+			templates.put(member.getName(), templateWord);
 		}
 	}
 	
@@ -115,16 +125,19 @@ public class Parser {
 			} else {
 				throw new RuntimeException("Incorrect data type in word.");
 			}
-			array = addExtensions(array);
 			if (isPrimary) {
 				word.setPrimary(array);
 			} else {
 				word.setSecondary(array);
 			}
+			word = addExtensions(word, isPrimary);
 		}
 	}
 	
-	private String[] addExtensions(String[] array) {
+	// This seems like an out-of-place method, although it isn't. Be careful!
+	private Word addExtensions(Word sourceWord, boolean primary) {
+		String[] array = primary ? 
+			sourceWord.getPrimary() : sourceWord.getSecondary();
 		List<String> result = new ArrayList<>();
 		for (String string : array) {
 			int a = string.indexOf("{");
@@ -134,11 +147,18 @@ public class Parser {
 				continue;
 			}
 			String template = string.substring(a + 1, b);
-			String[] replacements = templates.get(template);
-			if (replacements == null) {
+			Word templateWord = templates.get(template);
+			String[] replacements;
+			if (templateWord == null) {
 				System.err.println("Template \"" + template +
-					"\" does not exist.");
-				continue;
+					"\" does not exist. Stopping replacing template.");
+				replacements = new String[]{template};
+			} else {
+				replacements = templateWord.getPrimary();
+			}
+			if (replacements == null) {
+				System.err.println("Template contained no replacements. Filling in empty space.");
+				replacements = new String[]{""};
 			}
 			String[] results = new String[replacements.length];
 			String preTemplate = string.substring(0, a);
@@ -146,10 +166,17 @@ public class Parser {
 			for (int i = 0; i < results.length; i++) {
 				results[i] = preTemplate + replacements[i] + postTemplate;
 			}
-			results = addExtensions(results);
+			// Uncomment (and fix) for nested extensions
+			//~ results = addExtensions(results);
 			for (String s : results) result.add(s);
 		}
-		return result.toArray(new String[result.size()]);
+		String[] resultArray = result.toArray(new String[result.size()]);
+		if (primary) {
+			sourceWord.setPrimary(resultArray);
+		} else {
+			sourceWord.setSecondary(resultArray);
+		}
+		return sourceWord;
 	}
 	
 	//~ private void test() {

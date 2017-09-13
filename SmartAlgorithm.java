@@ -65,7 +65,7 @@ public class SmartAlgorithm extends LearningAlgorithm {
 			double result = sum / sumOfFactors;
 			
 			result = Math.pow(FITNESS_BASE,
-				(double) (sumOfFactors - sum) / sumOfFactors);
+				(sumOfFactors - sum) / sumOfFactors);
 			result *= Math.pow(
 				(lastAnswer() == false) ? DYNAMIC_REFRESH_BASE : REFRESH_BASE,
 				timeSinceLastCall());
@@ -85,9 +85,9 @@ public class SmartAlgorithm extends LearningAlgorithm {
 	// gets asked itself, then it resets.
 	public static final double REFRESH_BASE = 1.1;
 	// REFRESH_BASE for words whose last answer was wrong ("new" words".
-	// The "dynamic", because the more words there are the higher the value gets
-	// to ensure that "new" words take (roughly) the same time to repeat.
-	public static final double DYNAMIC_REFRESH_BASE = 2;
+	// <not-yet>The "dynamic", because the more words there are the higher the value gets
+	// to ensure that "new" words take (roughly) the same time to repeat.</not-yet>
+	public static final double DYNAMIC_REFRESH_BASE = 4;
 	// Number of words the user must be able to
 	// remember until he answers them correctly.
 	public static final int MAX_NEW_WORDS = 2;
