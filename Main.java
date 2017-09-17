@@ -43,9 +43,7 @@ public class Main {
 			System.out.println("Starting GUI.");
 			javafx.application.Application.launch(MyApplication.class);
 		} else {
-			while (true) {
-				if (askWord(algorithm)) break;
-			}
+			new CUIApplication().start();
 		}
 	}
 	
@@ -55,7 +53,7 @@ public class Main {
 	
 	private static Section pickSection() {
 		for (int i = 0; i < vocabulary.getSections().size(); i++) {
-			System.out.println(" " + (i + 1) + ") " +
+			System.out.println(" " + String.format("%02d", (i + 1)) + ") " +
 				vocabulary.getSections().get(i).getName());
 		}
 		System.out.print("Select one or more, comma-seperated: ");
@@ -69,26 +67,5 @@ public class Main {
 			.toArray(Section[]::new);
 		
 		return Section.combine(sections);
-	}
-	
-	private static boolean askWord(LearningAlgorithm algorithm) {
-		Word word = algorithm.pickWord();
-		System.out.print(Colorer.setColor(11) + word.getPrimary() +
-			" - " +	Colorer.setColor(-1));
-		String answer = System.console().readLine();
-		if (answer.equals("exit")) return true;
-		boolean correct = word.isSecondaryCorrect(answer);
-		if (correct) {
-			System.out.println(Colorer.colored("Correct!", 10));
-		} else {
-			System.out.println(Colorer.colored("Wrong! ", 9) +
-				Colorer.setAttribute(1) + word.getSecondary() +
-				Colorer.setAttribute(0) + ".");
-		}
-		System.out.println(Colorer.colored("Press enter to continue.", 8));
-		System.console().readLine();
-		algorithm.processAnswer(word, correct);
-		
-		return false;
 	}
 }

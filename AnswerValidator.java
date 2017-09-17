@@ -41,7 +41,8 @@ public class AnswerValidator {
 		private void processCharacter() {
 			if (i + 1 != code.length() && c[i + 1] == '{' &&
 					(c[i] == '*' || c[i] == '/'
-					|| c[i] == '?' || c[i] == '!')) {
+					|| c[i] == '?' || c[i] == '!'
+					|| c[i] == '~')) {
 				if (c[i] == '*') {
 					processAsterisk();
 				} else if (c[i] == '/') {
@@ -50,6 +51,8 @@ public class AnswerValidator {
 					processQuestionMark(false);
 				} else if (c[i] == '!') {
 					processQuestionMark(true);
+				} else if (c[i] == '~') {
+					processTilde();
 				}
 			} else {
 				display.append(c[i]);
@@ -120,6 +123,31 @@ public class AnswerValidator {
 			i = expressionEnd;
 		}
 		
+		private void processTilde() {
+			i += 2;
+			int expressionEnd = expressionEnd();
+			int pipe = nextPipeOnLevel();
+			String hint = code.substring(i, pipe == -1 ? expressionEnd : pipe);
+			String[] hintConverted = Converter.convert(hint);
+			hint = hintConverted[0];
+			String hintDisplay = hintConverted[1];
+			int nextHashtag = nextOnLevel('#');
+			String placement0, placement1;
+			if (pipe == -1) {
+				placement0 = "";
+				placement1 = "";
+			} else {
+				placement0 = code.substring(pipe + 1, nextHashtag);
+				placement1 = code.substring(nextHashtag + 1, expressionEnd);
+			}
+			display.append(placement0 + "(" + hintDisplay + ")" + placement1);
+			placement0 = Converter.convert(placement0)[0];
+			placement1 = Converter.convert(placement1)[0];
+			regex.append(placement0 + "\\(?" + hint + "\\)?" + placement1);
+			
+			i = expressionEnd;
+		}
+		
 		private int expressionEnd() {
 			int depth = 1;
 			for (int j = i; j < code.length(); j++) {
@@ -134,11 +162,15 @@ public class AnswerValidator {
 		}
 		
 		private int nextPipeOnLevel() {
+			return nextOnLevel('|');
+		}
+		
+		private int nextOnLevel(char character) {
 			int depth = 0;
 			for (int j = i; j < code.length(); j++) {
 				if (c[j] == '{') depth++;
 				else if (c[j] == '}') depth--;
-				else if (depth == 0 && c[j] == '|') {
+				else if (depth == 0 && c[j] == character) {
 					return j;
 				} else if (depth < 0) {
 					break;
