@@ -6,15 +6,16 @@
 	
 	"templates": {
 		"o": "*{o, -a|/{o|a}?{s}}",
+		"e": "e?{s}",
 		"alg": "*{algo / alguien|alg/{o|uien}}",
-		"jdn": "*{jdn.|j/{dn.|emanden}}",
-		"jdm": "*{jdm.|j/{dm.|emandem}}",
-		"etw": "*{etw.|etw/{.|as}}"
+		"jdn": "*{jdn.|j/{dn?{.}|emanden}}",
+		"jdm": "*{jdm.|j/{dm?{.}|emandem}}",
+		"etw": "*{etw.|etw/{?{.}|as}}"
 	},
 	"sections": {
-		"~~DEPR -Nuevas palabras 1": [
+		"-Nuevas palabras 1": [
 			{
-				"de": ["das wäre genial", "es wäre genial"],
+				"de": "/{das|es} wäre genial",
 				"es": "sería genial"
 			},
 			{
@@ -27,17 +28,11 @@
 			},
 			{
 				"de": "unterschiedlich",
-				"es": "distint{o}"
+				"es": "distint%{o}"
 			},
 			{
-				"de": {
-					"word": "schicken",
-					"display": "schicken (eine E-mail)"
-				},
-				"es": {
-					"word": "mandar",
-					"display": "mandar (un correo electrónico)"
-				}
+				"de": "!{(eine E-Mail) }schicken",
+				"es": "mandar!{ (un correo electrónico)}"
 			},
 			{
 				"de": "antworten",
@@ -65,19 +60,19 @@
 			},
 			{
 				"de": "entsprechend",
-				"es": "correspondient{e}"
+				"es": "correspondient%{e}"
 			},
 			{
 				"de": "unterstreichen",
 				"es": "subrayar"
 			},
 			{
-				"de": ["benutzen", "verwenden"],
+				"de": "/{benutzen|verwenden}",
 				"es": "utilizar"
 			},
 			{
 				"de": "unbekannt",
-				"es": "desconocid{o}"
+				"es": "desconocid%{o}"
 			},
 			{
 				"de": "die Lösung",
@@ -100,10 +95,7 @@
 				"es": "la fiebre"
 			},
 			{
-				"de": {
-					"word": ["die alte Frau", "die ganz alte Frau"],
-					"display": "die (ganz) alte Frau"
-				},
+				"de": "die~{ganz| #} alte Frau",
 				"es": "la anciana"
 			},
 			{
@@ -123,7 +115,7 @@
 				"es": "el pastel"
 			},
 			{
-				"de": ["zu Abend essen", "abendessen"],
+				"de": "/{zu Abend |abend}essen",
 				"es": "cenar"
 			},
 			{
@@ -139,7 +131,7 @@
 				"es": "pasarlo bien"
 			},
 			{
-				"de": ["der Wohnwagen", "das Wohnmobil"],
+				"de": "/{der Wohnwagen|das Wohnmobil}",
 				"es": "la caravana"
 			},
 			{
@@ -147,13 +139,13 @@
 				"es": "correr"
 			}
 		],
-		"~~DEPR -Nuevas palabras 2": [
+		"-Nuevas palabras 2": [
 			{
 				"de": "verneinen",
 				"es": "negar"
 			},
 			{
-				"de": ["der Fußballer", "der Fußballspieler"],
+				"de": "der Fußball~{spiel}er",
 				"es": "el futbolista"
 			},
 			{
@@ -173,7 +165,7 @@
 				"es": "el lugar de encuentro"
 			},
 			{
-				"de": ["erzählen", "berichten"],
+				"de": "/{erzählen|berichten}",
 				"es": "contar"
 			},
 			{
@@ -189,21 +181,15 @@
 				"es": "saltar de la cama"
 			},
 			{
-				"de": {
-					"display": "die (Hand)Tasche, die (Plastik)Tasche",
-					"word": ["die Tasche", "die Handtasche", "die Plastiktasche", "die (Hand)Tasche", "die (Plastik)Tasche"]
-				},
-				"es": {
-					"display": "el bolso (z.B. Handtasche), la bolsa (z.B. Plastiktasche)",
-					"word": ["el bolso", "la bolsa"]
-				}
+				"de": "die ~{Hand}Tasche",
+				"es": "/{el bolso|la bolsa}"
 			},
 			{
 				"de": "sich mit Freunden treffen",
 				"es": "quedar con amigos"
 			},
 			{
-				"de": ["schrecklich", "furchbar"],
+				"de": "/{schrecklich|furchbar}",
 				"es": "terrible"
 			},
 			{
@@ -216,36 +202,30 @@
 			},
 			{
 				"de": "schmutzig",
-				"es": "suci{o}"
+				"es": "suci%{o}"
 			},
 			{
 				"de": "sauber",
-				"es": "limpi{o}"
+				"es": "limpi%{o}"
 			},
 			{
 				"de": "schwimmen",
 				"es": "nadar"
 			},
 			{
-				"de": ["Sport treiben", "Sport machen"],
+				"de": "Sport /{treiben|machen}",
 				"es": "hacer deporte"
 			},
 			{
-				"de": {
-					"display": "der/das Basketball (als Sportart)",
-					"word": ["der Basketball", "das Basketball"]
-				},
+				"de": "/{der|das} Basketball~{als Sportart| #}",
 				"es": "el baloncesto"
 			},
 			{
-				"de": {
-					"display": "der Basketball (als Ball)",
-					"word": "der Basketball"
-				},
+				"de": "der Basketball~{als Ball| #}",
 				"es": "la pelota de baloncesto"
 			},
 			{
-				"de": ["besuchen", "besichtigen"],
+				"de": "/{besuchen|besichtigen}",
 				"es": "visitar"
 			},
 			{
@@ -254,7 +234,7 @@
 			},
 			{
 				"de": "das Cello",
-				"es": ["el violinchelo", "el chelo", "el cello"]
+				"es": "el ~{violin}chelo"
 			},
 			{
 				"de": "das Klavier",
@@ -277,30 +257,21 @@
 				"es": "dar un concierto"
 			},
 			{
-				"de": {
-					"display": "proben (Theater, Auftritt)",
-					"word": "proben"
-				},
+				"de": "proben~{Theater, Auftritt| #}",
 				"es": "ensayar"
 			},
 			{
-				"de": {
-					"display": "Fotos von jdm./etw. machen",
-					"word": ["Fotos von {jdm} machen", "Fotos von {etw} machen"]
-				},
-				"es": {
-					"display": "tirar fotos de alguien/algo",
-					"word": "tirar fotos de {alg}"
-				}
+				"de": "Fotos von /{%{jdm}|%{etw}} machen",
+				"es": "tirar fotos de {alg}"
 			}
 		],
-		"~~DEPR Unidad 1 — Primer paso: En el barrio La Latina": [
+		"Unidad 1 — Primer paso: En el barrio La Latina": [
 			{
 				"de": "umziehen",
 				"es": "mudarse"
 			},
 			{
-				"de": "sich um jemanden kümmern",
+				"de": "sich um %{jdn} kümmern",
 				"es": "cuidar a alguien"
 			},
 			{
@@ -308,23 +279,23 @@
 				"es": "un quiosco"
 			},
 			{
-				"de": ["ein Kindergarten", "eine Kinderkrippe"],
+				"de": "/{ein Kindergarten|eine Kinderkrippe}",
 				"es": "una guardería"
 			},
 			{
-				"de": ["jdm. etw. berechnen", "von jdm. etw. verlangen"],
+				"de": "/{%{jdm} %{etw} berechnen|von %{jdm} %{etw} verlangen}",
 				"es": "cobrar algo a alguien"
 			},
 			{
 				"de": "blind",
-				"es": "cieg{o}"
+				"es": "cieg%{o}"
 			},
 			{
-				"de": ["ein Senior", "ein alter Mann", "eine Seniorin", "eine alte Frau"],
-				"es": ["un anciano", "una anciana"]
+				"de": "ein Senior, ein alter Mann; eine Seniorin, eine alte Frau",
+				"es": "/{un anciano|una anciana}"
 			},
 			{
-				"de": "jemandem sehr gefallen",
+				"de": "%{jdm} sehr gefallen",
 				"es": "molar a alguien"
 			},
 			{
@@ -344,34 +315,28 @@
 				"es": "la fiebre"
 			},
 			{
-				"de": "verheiratet sein",
-				"es": "estar casad{o}"
+				"de": "verheiratet!{ (sein)}",
+				"es": "!{(estar) }casad%{o}"
 			},
 			{
 				"de": "ein Lotterielos",
 				"es": "un billete de lotería"
 			},
 			{
-				"de": ["etwas anfangen", "etwas beginnen"],
-				"es": {
-					"word": "comenzar algo",
-					"display": "comenzar (-ie-) algo"
-				}
+				"de": "/{%{etw} anfangen|%{etw} beginnen}",
+				"es": "comenzar!{ (-ie-)} algo"
 			},
 			{
-				"de": "jemanden um etwas bitten",
-				"es": {
-					"word": "pedir algo a alguien",
-					"display": "pedir (-i-/-i-) algo a alguien"
-				}
+				"de": "%{jdn} um %{etw} bitten",
+				"es": "pedir!{ (-i-/-i-)} algo a alguien"
 			},
 			{
-				"de": ["ein Guatemalteke", "eine Guatemaltekin"],
-				"es": ["un guatemalteco", "una guatemalteca"]
+				"de": "/{ein Guatemalteke|eine Guatemaltekin}",
+				"es": "/{un guatemalteco|una guatemalteca}"
 			},
 			{
 				"de": "eine Hausfrau",
-				"es": "un ama de casa"
+				"es": "un amade casa"
 			},
 			{
 				"de": "das Taschengeld",
@@ -390,13 +355,13 @@
 				"es": "una barra de pan"
 			},
 			{
-				"de": "Zahlen, bitte!",
+				"de": "Zahlen!{,} bitte!",
 				"es": "¿Me cobras?"
 			}
 		],
-		"~~DEPR Unidad 1 – Texto: El primer día": [
+		"Unidad 1 — Texto: El primer día": [
 			{
-				"de": "sich über etwas ärgern",
+				"de": "sich über %{etw} ärgern",
 				"es": "enfadarse por algo"
 			},
 			{
@@ -413,10 +378,10 @@
 			},
 			{
 				"de": "positiv",
-				"es": "positiv{o}"
+				"es": "positiv%{o}"
 			},
 			{
-				"de": "etwas versuchen",
+				"de": "%{etw} versuchen",
 				"es": "intentar algo"
 			},
 			{
@@ -428,11 +393,8 @@
 				"es": "la cara"
 			},
 			{
-				"de": "etwas anschalten",
-				"es": {
-					"word": "encender algo",
-					"display": "encender (-ie-) algo"
-				}
+				"de": "%{etw} anschalten",
+				"es": "encender!{ (-ie-)} algo"
 			},
 			{
 				"de": "ein Film",
@@ -447,10 +409,7 @@
 				"es": "una provincia"
 			},
 			{
-				"de": {
-					"word": "auf zu",
-					"display": "auf zu ..."
-				},
+				"de": "auf zu!{ ...}",
 				"es": "a por"
 			},
 			{
@@ -458,8 +417,8 @@
 				"es": "la tele"
 			},
 			{
-				"de": ["unartig", "böse"],
-				"es": "mal{o}"
+				"de": "/{unartig|böse}",
+				"es": "mal%{o}"
 			},
 			{
 				"de": "funktionieren",
@@ -467,18 +426,18 @@
 			},
 			{
 				"de": "kompliziert",
-				"es": "complicad{o}"
+				"es": "complicad%{o}"
 			},
 			{
-				"de": ["etwas bemerken", "jemanden bemerken"],
-				"es": ["notar algo", "notar a alguien"]
+				"de": "/{%{etw}|%{jdn}} bemerken",
+				"es": "notar /{algo|a alguien}"
 			},
 			{
 				"de": "ein Löwe",
 				"es": "un león"
 			},
 			{
-				"de": ["eine DVD", "ein DVD-Player"],
+				"de": "/{eine DVD|ein DVD-Player}",
 				"es": "un DVD"
 			},
 			{
@@ -491,10 +450,7 @@
 			},
 			{
 				"de": "nur Bahnhof verstehen",
-				"es": {
-					"word": "no entender ni papa",
-					"display": "no entender (-ie-) ni papa"
-				}
+				"es": "no entender!{ (-ie-)} ni papa"
 			},
 			{
 				"de": "Spaß haben",
@@ -505,48 +461,39 @@
 				"es": "la sala de profesores"
 			},
 			{
-				"de": ["anders", "unterschiedlich"],
-				"es": "distint{o}"
+				"de": "/{anders|unterschiedlich}",
+				"es": "distint%{o}"
 			},
 			{
 				"de": "nur Mut!",
 				"es": "¡ánimo!"
 			},
 			{
-				"de": ["sich an etwas erinnern", "sich an jemanden erinnern"],
-				"es": {
-					"word": ["acordarse de algo", "acordarse de alguien"],
-					"display": "acordarse (-ue-) de algo / alguien"
-				}
+				"de": "sich an /{%{etw}|%{jdn}} erinnern",
+				"es": "acordarse!{ (-ue-)} de /{algo|alguien}"
 			},
 			{
 				"de": "aufmerksam",
-				"es": "atent{o}"
+				"es": "atent%{o}"
 			},
 			{
-				"de": ["ein Apparat", "ein Gerät"],
+				"de": "/{ein Apparat|ein Gerät}",
 				"es": "un aparato"
 			},
 			{
-				"de": {
-					"word": ["immer", "immer mehr"],
-					"display": "immer (+ Steigerungsform des Adj.), immer mehr (+ Subst.)"
-				},
+				"de": "/{immer!{ (+ Steigerungsform des Adj.)}|immer mehr!{ (+ Subst.)}}",
 				"es": "cada vez más"
 			},
 			{
-				"de": "etwas ausschalten",
+				"de": "%{etw} ausschalten",
 				"es": "apagar algo"
 			},
 			{
-				"de": ["sich etwas nähern", "sich jemandem nähern"],
-				"es": ["acercarse a algo", "acercarse a alguien"]
+				"de": "sich /{%{etw}|%{jdm}} nähern",
+				"es": "acercarse a /{algo|alguien}"
 			},
 			{
-				"de": {
-					"word": ["zu", "zuviel"],
-					"display": "zu (+ adj.), zuviel"
-				},
+				"de": "/{zu!{ (+ adj.)}|zuviel}",
 				"es": "demasiado"
 			},
 			{
@@ -554,27 +501,24 @@
 				"es": "un acento"
 			},
 			{
-				"de": "verrückt sein",
-				"es": "estar loc{o}"
+				"de": "verrückt!{ (sein)}",
+				"es": "!{(estar) }loc%{o}"
 			},
 			{
 				"de": "eine Schule",
 				"es": "un colegio"
 			},
 			{
-				"de": ["da", "weil"],
-				"es": "como"
+				"de": "/{da|weil}",
+				"es": "como!{ (Konj.)}"
 			},
 			{
-				"de": ["eine Technik", "eine Technologie"],
+				"de": "/{eine Technik|eine Technologie}",
 				"es": "una tecnología"
 			},
 			{
-				"de": "in etwas (hinein)passen",
-				"es": {
-					"word": "caber en algo",
-					"display": "caber (1ª pers. quepo) en algo"
-				}
+				"de": "in %{etw} !{(hinein)}passen",
+				"es": "caber!{ (1ª pers. quepo)} en algo"
 			},
 			{
 				"de": "nicht einmal",
@@ -585,44 +529,41 @@
 				"es": "antes"
 			},
 			{
-				"de": ["brav", "gutmütig"],
-				"es": "buen{o}"
+				"de": "/{brav|gutmütig}",
+				"es": "buen%{o}"
 			},
 			{
-				"de": "jemanden verrückt machen",
-				"es": "tener loco a alguien"
+				"de": "%{jdn} verrückt machen",
+				"es": "tener loc%{o} a alguien"
 			},
 			{
 				"de": "eine Möglichkeit",
 				"es": "una posibilidad"
 			}
 		],
-		"~~DEPR Unidad 2 – Texto: Todos me quieren tomar el pelo": [
+		"Unidad 2 — Texto: Todos me quieren tomar el pelo": [
 			{
-				"de": ["ein Junge", "ein Bursche", "eine junge Frau"],
-				"es": ["un chaval", "una chavala"]
+				"de": "ein Junge, ein Bursche, eine junge Frau",
+				"es": "/{un chaval|una chavala}"
 			},
 			{
-				"de": "{etw} hoffen",
+				"de": "%{etw} hoffen",
 				"es": "esperar algo"
 			},
 			{
-				"de": {
-					"display": "jmd. etw. befehlen, das Sagen haben",
-					"word": ["{jdm} {etw} befehlen", "das Sagen haben"]
-				},
-				"es": "mandar algo a alguien"
+				"de": "/{%{jdm} %{etw} befehlen|das Sagen haben}",
+				"es": "mandar!{ (algo a alguien)}"
 			},
 			{
 				"de": "ein Casting",
 				"es": "un casting"
 			},
 			{
-				"de": "{jdn} auf den Arm nehmen",
+				"de": "%{jdn} auf den Arm nehmen",
 				"es": "tomar el pelo a alguien"
 			},
 			{
-				"de": ["groß", "großartig"],
+				"de": "/{groß|großartig}",
 				"es": "gran"
 			},
 			{
@@ -630,24 +571,15 @@
 				"es": "un pendiente"
 			},
 			{
-				"de": {
-					"display": "ein Film (Kurzform)",
-					"word": "ein Film"
-				},
+				"de": "ein Film",
 				"es": "una peli"
 			},
 			{
-				"de": {
-					"display": "über etw. / jdn. lachen",
-					"word": ["über {etw} lachen", "über {jdn} lachen"]
-				},
-				"es": "reírse de {alg}"
+				"de": "über /{%{etw}|%{jdn}} lachen",
+				"es": "reírse de /{algo|alguien}"
 			},
 			{
-				"de": {
-					"display": "etw. (er)schaffen",
-					"word": ["{etw} schaffen", "{etw} erschaffen"]
-				},
+				"de": "%{etw}!{ (er)}schaffen",
 				"es": "crear algo"
 			},
 			{
@@ -655,12 +587,12 @@
 				"es": "unas tijeras"
 			},
 			{
-				"de": "sich von {jdm} trennen",
+				"de": "sich von %{jdm} trennen",
 				"es": "separarse de alguien"
 			},
 			{
 				"de": "einzig",
-				"es": "únic{o}"
+				"es": "únic%{o}"
 			},
 			{
 				"de": "wegen",
@@ -679,51 +611,48 @@
 				"es": "un avatar"
 			},
 			{
-				"de": ["ein Kumpel", "ein Freund", "eine Freundin"],
-				"es": ["un colega", "una colega"]
+				"de": "ein Kumpel, ein Freund, eine Freundin",
+				"es": "/{un|una} colega"
 			},
 			{
 				"de": "ein Scherz",
 				"es": "una broma"
 			},
 			{
-				"de": {
-					"display": "ein Gymnasium (Kurzform)",
-					"word": "ein Gymnasium"
-				},
+				"de": "ein Gymnasium",
 				"es": "un insti"
 			},
 			{
-				"de": ["das Aussehen", "das Äußere"],
+				"de": "/{das Aussehen|das Äußere}",
 				"es": "el aspecto"
 			},
 			{
-				"de": ["faul", "ein Faulpelz"],
-				"es": "vag{o}"
+				"de": "/{faul|ein Faulpelz}",
+				"es": "vag%{o}"
 			},
 			{
-				"de": "{etw} satt haben",
-				"es": "estar hart{o} de algo"
+				"de": "%{etw} satt haben",
+				"es": "estar hart%{o} de algo"
 			},
 			{
-				"de": "etw. (ab-)schneiden",
+				"de": "%{etw}!{ (ab-)}schneiden",
 				"es": "cortar algo"
 			},
 			{
-				"de": ["ein Schauspieler", "eine Schauspielerin"],
-				"es": ["un actor", "una actriz"]
+				"de": "/{ein Schauspieler|eine Schauspielerin}",
+				"es": "/{un actor|una actriz}"
 			},
 			{
-				"de": ["ein Sachverhalt", "eine Angelegenheit"],
+				"de": "/{ein Sachverhalt|eine Angelegenheit,}",
 				"es": "un asunto"
 			},
 			{
-				"de": ["arm", "bedauernswert"],
+				"de": "/{arm|bedauernswert}",
 				"es": "pobre"
 			},
 			{
 				"de": "einzig",
-				"es": "sol{o}"
+				"es": "sol%{o}"
 			}
 		],
 		"Unidad 3 – Texto: Conversación de vecinos": [
@@ -1036,18 +965,190 @@
 				"es": "gritar algo"
 			}
 		],
-		"~Test": [
+		"Unidad 5 — Yo me intereso por ...": [
 			{
-				"de": "reden",
-				"es": "hablar"
+				"de": "nützlich",
+				"es": "útil"
 			},
 			{
-				"de": "essen",
-				"es": "comer"
+				"de": "verantwortungsbewusst",
+				"es": "responsable"
 			},
 			{
-				"de": "sehen",
-				"es": ["ver", "mirar"]
+				"de": "verständnisvoll",
+				"es": "comprensiv%{o}"
+			},
+			{
+				"de": "unabhängig",
+				"es": "independiente"
+			},
+			{
+				"de": "der Erfolg",
+				"es": "el éxito"
+			},
+			{
+				"de": "kontaktfreudig",
+				"es": "comunicativ%{o}"
+			},
+			{
+				"de": "rücksichtslos",
+				"es": "desconsiderad%{o}"
+			},
+			{
+				"de": "/{!{(un)}geduldig sein|!{(keine) }Geduld haben}",
+				"es": "!{(no) }tener paciencia"
+			},
+			{
+				"de": "großzügig",
+				"es": "generos%{o}"
+			},
+			{
+				"de": "ehrgeizig",
+				"es": "ambicios%{o}"
+			},
+			{
+				"de": "/{erfolgreich}{erfolglos} sein",
+				"es": "!{(no) }tener éxito"
+			},
+			{
+				"de": "die Geduld",
+				"es": "la paciencia"
+			},
+			{
+				"de": "zielstrebig",
+				"es": "constante"
+			}
+		],
+		"Unidad 5 — Texto: ¿Cómo eres y adónde vas?": [
+			{
+				"de": "fröhlich",
+				"es": "alegre"
+			},
+			{
+				"de": "/{eine NGO}{eine Nichtregierungsorganisation}",
+				"es": "una ONG"
+			},
+			{
+				"de": "rauchen",
+				"es": "fumar"
+			},
+			{
+				"de": "/{mein!{ (fester)} Freund}{meine!{ (feste)} Freundin}",
+				"es": "mi chico/{o|a}"
+			},
+			{
+				"de": "Lust haben %{etw} zu tun",
+				"es": "tener ganas de hacer algo"
+			},
+			{
+				"de": "aktiv",
+				"es": "activ%{o}"
+			},
+			{
+				"de": "das Ausland",
+				"es": "el extranjero"
+			},
+			{
+				"de": "passend",
+				"es": "adecuad%{o}"
+			},
+			{
+				"de": "/{in}{bis!{ (zeitl.)}}",
+				"es": "dentro de"
+			},
+			{
+				"de": "/{aufregend}{spannend}",
+				"es": "emocionante"
+			},
+			{
+				"de": "auffällig",
+				"es": "llamativ%{o}"
+			},
+			{
+				"de": "%{jdm} vertrauen",
+				"es": "confiar!{ (-ío)} en alguien"
+			},
+			{
+				"de": "tolerant",
+				"es": "tolerante"
+			},
+			{
+				"de": "schüchtern",
+				"es": "tímid%{o}"
+			},
+			{
+				"de": "sich bei %{etw} langweilen",
+				"es": "aburrirse con algo"
+			},
+			{
+				"de": "/{ab und zu}{manchmal}",
+				"es": "de vez en cuando"
+			},
+			{
+				"de": "%{etw} zusammenzählen",
+				"es": "sumar algo"
+			},
+			{
+				"de": "ein Kontakt",
+				"es": "un contacto"
+			},
+			{
+				"de": "%{etw} erhöhen",
+				"es": "subir algo"
+			},
+			{
+				"de": "%{jdm} %{etw} empfehlen",
+				"es": "recomendar!{ (-ie-)} algo a alguien"
+			},
+			{
+				"de": "der Alkohol",
+				"es": "el alcohol"
+			},
+			{
+				"de": "/{das Geschlecht}{der Sex}",
+				"es": "el sexo"
+			},
+			{
+				"de": "/{der Partner}{die Partnerin}",
+				"es": "la pareja"
+			},
+			{
+				"de": "laut",
+				"es": "alt%{o}"
+			},
+			{
+				"de": "abenteuerlustig",
+				"es": "aventurer%{o}"
+			},
+			{
+				"de": "ein Punkt",
+				"es": "un punto"
+			},
+			{
+				"de": "ein Hobby",
+				"es": "una afición"
+			}
+		],
+		"Unidad 5 — Ejercicios": [
+			{
+				"de": "die Hälfte",
+				"es": "la mitad"
+			},
+			{
+				"de": "... Prozent",
+				"es": "un ... por ciento"
+			},
+			{
+				"de": "ein Drittel",
+				"es": "un tercio"
+			},
+			{
+				"de": "/{die Mehrheit}{die meisten}",
+				"es": "la mayoría"
+			},
+			{
+				"de": "ein Viertel",
+				"es": "un cuarto"
 			}
 		]
 	}

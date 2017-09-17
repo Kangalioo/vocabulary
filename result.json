@@ -1,0 +1,114 @@
+[
+	{
+		"de": "ein Junge, ein Bursche, eine junge Frau",
+		"es": "/{un chaval|una chavala}"
+	},
+	{
+		"de": "%{etw} hoffen",
+		"es": "esperar algo"
+	},
+	{
+		"de": "/{%{jdm} %{etw} befehlen|das Sagen haben}",
+		"es": "mandar!{!{ (algo a alguien)}}"
+	},
+	{
+		"de": "ein Casting",
+		"es": "un casting"
+	},
+	{
+		"de": "%{jdn} auf den Arm nehmen",
+		"es": "tomar el pelo a alguien"
+	},
+	{
+		"de": "/{groß|großartig}",
+		"es": "gran"
+	},
+	{
+		"de": "ein Ohrring",
+		"es": "un pendiente"
+	},
+	{
+		"de": "ein Film",
+		"es": "una peli"
+	},
+	{
+		"de": "über /{%{etw}|%{jdn}} lachen",
+		"es": "reírse de /{algo|alguien}"
+	},
+	{
+		"de": "%{etw}!{!{ (er)}}schaffen",
+		"es": "crear algo"
+	},
+	{
+		"de": "eine Schere",
+		"es": "unas tijeras"
+	},
+	{
+		"de": "sich von %{jdm} trennen",
+		"es": "separarse de alguien"
+	},
+	{
+		"de": "einzig",
+		"es": "únic%{o}"
+	},
+	{
+		"de": "wegen",
+		"es": "por"
+	},
+	{
+		"de": "Hilfe!",
+		"es": "¡socorro!"
+	},
+	{
+		"de": "ein Plakat",
+		"es": "un cartel"
+	},
+	{
+		"de": "ein Avatar",
+		"es": "un avatar"
+	},
+	{
+		"de": "ein Kumpel, ein Freund, eine Freundin",
+		"es": "/{un|una} colega"
+	},
+	{
+		"de": "ein Scherz",
+		"es": "una broma"
+	},
+	{
+		"de": "ein Gymnasium",
+		"es": "un insti"
+	},
+	{
+		"de": "/{das Aussehen|das Äußere}",
+		"es": "el aspecto"
+	},
+	{
+		"de": "/{faul|ein Faulpelz}",
+		"es": "vag%{o}"
+	},
+	{
+		"de": "%{etw} satt haben",
+		"es": "estar hart%{o} de algo"
+	},
+	{
+		"de": "%{etw}!{!{ (ab-)}}schneiden",
+		"es": "cortar algo"
+	},
+	{
+		"de": "/{ein Schauspieler|eine Schauspielerin}",
+		"es": "/{un actor|una actriz}"
+	},
+	{
+		"de": "/{ein Sachverhalt|eine Angelegenheit,}",
+		"es": "un asunto"
+	},
+	{
+		"de": "/{arm|bedauernswert}",
+		"es": "pobre"
+	},
+	{
+		"de": "einzig",
+		"es": "sol%{o}"
+	}
+]

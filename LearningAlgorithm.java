@@ -22,10 +22,6 @@ public abstract class LearningAlgorithm {
 	
 	abstract public void processAnswer(int index, boolean answer);
 	
-	//~ abstract public void writeData(File file);
-	
-	//~ abstract public void loadData(File file);
-	
 	public int wordId(Word word) {
 		return words.indexOf(word);
 	}

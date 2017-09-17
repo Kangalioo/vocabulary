@@ -13,12 +13,6 @@ public class Main {
 	
 	
 	public static void main(String[] args) {
-		//~ String code = "*{un mandar|un?{a} /{mandar|mender}?{/{o|a}}}";
-		//~ String result = AnswerValidator.Converter.convert(code);
-		//~ System.out.println(code);
-		//~ System.out.println(" ->");
-		//~ System.out.println(result);
-		//~ if(true)return;
 		try {
 			vocabulary = Parser.parse(JSON_FILE);
 			start();

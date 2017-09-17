@@ -89,8 +89,12 @@ public class Parser {
 			index1 += 2;
 			int index2 = raw.indexOf("}", index1);
 			String templateName = raw.substring(index1, index2);
-			raw = raw.replace("%{" + templateName + "}",
-				templates.get(templateName));
+			String templateResult = templates.get(templateName);
+			if (templateResult == null) {
+				System.err.println("Template " + templateName + " doesn't exist.");
+				continue;
+			}
+			raw = raw.replace("%{" + templateName + "}", templateResult);
 		}
 		return raw;
 	}

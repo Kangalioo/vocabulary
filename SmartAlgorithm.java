@@ -111,10 +111,6 @@ public class SmartAlgorithm extends LearningAlgorithm {
 	}
 	
 	public int pick() {
-		//~ int newWords = instances.stream()
-			//~ .filter(e -> e.lastAnswer() == false)
-			//~ .count();
-		
 		int newWords = 0;
 		double[] priorities = new double[instances.size()];
 		for (int i = 0; i < priorities.length; i++) {
@@ -125,13 +121,6 @@ public class SmartAlgorithm extends LearningAlgorithm {
 			}
 			if (lastChoice == i) priorities[i] = 0;
 		}
-		
-		// REMEMBER
-		for (double d : priorities) {
-			System.out.print(Math.round(d * 100) / 100.0 + ", ");
-		}
-		
-		System.out.println();
 		
 		wordsAsked++;
 		int choice = weightedRandom(priorities);

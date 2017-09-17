@@ -87,14 +87,18 @@ public class AnswerValidator {
 			optionsList.add(code.substring(i, expressionEnd));
 			String[] options = optionsList.toArray(new String[0]);
 			
-			display.append(String.join(" / ", options));
 			regex.append('(');
 			for (int j = 0; j < options.length; j++) {
-				String converted = Converter.convert(options[j])[0];
+				String[] rawConverted = Converter.convert(options[j]);
+				String converted = rawConverted[0];
+				display.append(rawConverted[1]);
 				if (converted.length() > 1) regex.append('(');
 				regex.append(converted);
 				if (converted.length() > 1) regex.append(')');
-				if (j + 1 != options.length) regex.append('|');
+				if (j + 1 != options.length) {
+					display.append(" / ");
+					regex.append('|');
+				}
 			}
 			regex.append(')');
 			
