@@ -1,0 +1,66 @@
+[
+	{
+		"de": "/{der Tod|der Todesfall}",
+		"es": "la muerte"
+	},
+	{
+		"de": "eine Tracht",
+		"es": "un traje~{típico| #}"
+	},
+	{
+		"de": "/{ein Minister|eine Ministerin}",
+		"es": "/{un ministro|una ministra}"
+	},
+	{
+		"de": "/{das Elend|die Armut}",
+		"es": "la miseria"
+	},
+	{
+		"de": "die Kriminalität",
+		"es": "la criminalidad"
+	},
+	{
+		"de": "das Trinkwasser",
+		"es": "el agua potable"
+	},
+	{
+		"de": "ein Elendsviertel",
+		"es": "una zona de miseria"
+	},
+	{
+		"de": "kulturell",
+		"es": "cultural"
+	},
+	{
+		"de": "der Reichtum",
+		"es": "la riqueza"
+	},
+	{
+		"de": "%{etw} verursachen",
+		"es": "causar algo"
+	},
+	{
+		"de": "Mittelamerika",
+		"es": "Centroamérica"
+	},
+	{
+		"de": "die Umweltverschmutzung",
+		"es": "la contaminación"
+	},
+	{
+		"de": "eine Regierung",
+		"es": "un gobierno"
+	},
+	{
+		"de": "%{jdm} %{etw} zeigen",
+		"es": "mostrar~{-ue-| #} algo a alguien"
+	},
+	{
+		"de": "der Verkehr",
+		"es": "el tráfico"
+	},
+	{
+		"de": "verschmutzt~{sein| #}",
+		"es": "~{estar|# }contaminad%{o}"
+	}
+]

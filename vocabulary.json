@@ -1150,6 +1150,566 @@
 				"de": "ein Viertel",
 				"es": "un cuarto"
 			}
+		],
+		"Unidad 6 — Texto: Nuestros Derechos": [
+			{
+				"de": "eine Bande, eine Gang",
+				"es": "una pandilla"
+			},
+			{
+				"de": "etw. mitteilen, etw. sagen",
+				"es": "comentar algo"
+			},
+			{
+				"de": "ein Verbrechen",
+				"es": "un delito"
+			},
+			{
+				"de": "ein Freiwilliger, eine Freiwillige",
+				"es": "un voluntario, una voluntaria"
+			},
+			{
+				"de": "etw. lösen",
+				"es": "solucionar algo"
+			},
+			{
+				"de": "existieren",
+				"es": "existir"
+			},
+			{
+				"de": "die Gewalt",
+				"es": "la violencia"
+			},
+			{
+				"de": "glücklich",
+				"es": "feliz"
+			},
+			{
+				"de": "ein Direktor, ein Leiter, eine Direktorin, eine Leiterin",
+				"es": "un director, una directora"
+			},
+			{
+				"de": "eine Schwierigkeit",
+				"es": "una dificultad"
+			},
+			{
+				"de": "etw. erreichen, etw. schaffen",
+				"es": "conseguir (-i-/-i-) algo"
+			},
+			{
+				"de": "ein Mädchen",
+				"es": "una muchacha"
+			},
+			{
+				"de": "ein Straßenkind",
+				"es": "un niño de la calle"
+			},
+			{
+				"de": "wunderbar",
+				"es": "estupendo, -a"
+			},
+			{
+				"de": "ein Spaziergang",
+				"es": "un paseo"
+			},
+			{
+				"de": "notwendig",
+				"es": "necesario, -a"
+			},
+			{
+				"de": "die Erste Welt",
+				"es": "el Primer Mundo"
+			},
+			{
+				"de": "ein Gefängnis",
+				"es": "una cárcel"
+			},
+			{
+				"de": "ein Grund, eine Ursache",
+				"es": "una razón"
+			},
+			{
+				"de": "der Bräutigam",
+				"es": "el novio"
+			},
+			{
+				"de": "ein Taufpate; ein Trauzeuge",
+				"es": "un padrino"
+			},
+			{
+				"de": "eine Messe",
+				"es": "una misa"
+			},
+			{
+				"de": "eine Karte",
+				"es": "una tarjeta"
+			},
+			{
+				"de": "das Brautpaar",
+				"es": "los novios"
+			},
+			{
+				"de": "eine Kerze",
+				"es": "una vela"
+			},
+			{
+				"de": "ein Festessen",
+				"es": "un banquete"
+			},
+			{
+				"de": "eine Abiturfeier, eine Examensfeier",
+				"es": "una fiesta de graduación"
+			},
+			{
+				"de": "die Dekoration",
+				"es": "la decoración"
+			},
+			{
+				"de": "ein Tanz, ein Ball",
+				"es": "un baile"
+			},
+			{
+				"de": "eine Einladungskarte",
+				"es": "una tarjeta de invitación"
+			},
+			{
+				"de": "eine Taufe",
+				"es": "un bautizo"
+			},
+			{
+				"de": "eine Taufpatin; eine Trauzeugin",
+				"es": "una madrina"
+			},
+			{
+				"de": "eine Einladung",
+				"es": "una invitación"
+			},
+			{
+				"de": "die Braut",
+				"es": "la novia"
+			},
+			{
+				"de": "lächerlich",
+				"es": "ridículo, -a"
+			},
+			{
+				"de": "die Eltern",
+				"es": "los papás (lat. am)"
+			},
+			{
+				"de": "selbstverständlich",
+				"es": "por supuesto"
+			},
+			{
+				"de": "ein 15-Jähriger, eine 15-Jährige",
+				"es": "un quinceañero, una quinceañera"
+			},
+			{
+				"de": "die Schulden",
+				"es": "las deudas"
+			},
+			{
+				"de": "verschuldet sein",
+				"es": "estar con deudas"
+			},
+			{
+				"de": "ein Wunsch",
+				"es": "un deseo"
+			},
+			{
+				"de": "typisch",
+				"es": "típico, -a"
+			},
+			{
+				"de": "ein Walzer",
+				"es": "un vals"
+			},
+			{
+				"de": "eine Meinung",
+				"es": "una opinión"
+			},
+			{
+				"de": "etw. ausgeben",
+				"es": "gastar(se) algo"
+			},
+			{
+				"de": "leider",
+				"es": "por desgracia"
+			},
+			{
+				"de": "ein Klub, ein Verein",
+				"es": "un club"
+			},
+			{
+				"de": "(etw.) annehmen, sich (etw.) vorstellen",
+				"es": "imaginar (algo)"
+			},
+			{
+				"de": "(etw.) genießen",
+				"es": "disfrutar (de algo)"
+			},
+			{
+				"de": "eine Diskothek",
+				"es": "una disco"
+			}
+		],
+		"Unidad 7 — Primer paso: Fiestas y costumbres": [
+			{
+				"de": "das Brautpaar",
+				"es": "los novios"
+			},
+			{
+				"de": "eine Kerze",
+				"es": "una vela"
+			},
+			{
+				"de": "eine Taufe",
+				"es": "un bautizo"
+			},
+			{
+				"de": "die Dekoration",
+				"es": "la decoración"
+			},
+			{
+				"de": "/{ein Tanz|ein Ball}",
+				"es": "un baile"
+			},
+			{
+				"de": "/{eine Taufpatin|eine Trauzeugin}",
+				"es": "una madrina"
+			},
+			{
+				"de": "eine Einladung",
+				"es": "una invitación"
+			},
+			{
+				"de": "die Braut",
+				"es": "la novia"
+			},
+			{
+				"de": "eine Einladungskarte",
+				"es": "una tarjeta de invitación"
+			},
+			{
+				"de": "/{ein Taufpate|ein Trauzeuge}",
+				"es": "un padrino"
+			},
+			{
+				"de": "eine Messe",
+				"es": "una misa"
+			},
+			{
+				"de": "eine Karte",
+				"es": "una tarjeta"
+			},
+			{
+				"de": "/{eine Abiturfeier|eine Examensfeier}",
+				"es": "una fiesta de graduación"
+			},
+			{
+				"de": "der Bräutigam",
+				"es": "el novio"
+			},
+			{
+				"de": "ein Festessen",
+				"es": "un banquete"
+			}
+		],
+		"Unidad 7 — Texto: Una fiesta diferente": [
+			{
+				"de": "/{unheimlich|super}",
+				"es": "súper-"
+			},
+			{
+				"de": "%{etw} verwenden",
+				"es": "usar algo"
+			},
+			{
+				"de": "der Reggaeton",
+				"es": "el reggaeton"
+			},
+			{
+				"de": "Kalifornien",
+				"es": "California!{ (f.)}"
+			},
+			{
+				"de": "/{ein Lateinamerikaner|eine Lateinamerikanerin}",
+				"es": "/{un latinoamericano|una latinoamericana}"
+			},
+			{
+				"de": "Salsa",
+				"es": "la salsa"
+			},
+			{
+				"de": "eine Erdbeere",
+				"es": "una fresa"
+			},
+			{
+				"de": "%{etw} anzünden",
+				"es": "encender!{ (-ie-)} algo"
+			},
+			{
+				"de": "kitschig",
+				"es": "kitsch"
+			},
+			{
+				"de": "gelegen!{ (sein)}",
+				"es": "!{(estar) }situad%{o}"
+			},
+			{
+				"de": "/{Kolonial-|aus der Kolonialzeit}",
+				"es": "colonial"
+			},
+			{
+				"de": "gemäßigt",
+				"es": "templad%{o}"
+			},
+			{
+				"de": "/{hoch|hoch gelegen}",
+				"es": "elevad%{o}"
+			},
+			{
+				"de": "ein Wald",
+				"es": "un bosque"
+			},
+			{
+				"de": "/{die Seele|das Herz}",
+				"es": "el alma"
+			}
+		],
+		"Unidad 8 — Ejercicio 1: Guatemala - alma de la tierra": [
+			{
+				"de": "umgeben~{sein| #} von",
+				"es": "~{estar|# }rodead%{o} de"
+			},
+			{
+				"de": "ein Vulkan",
+				"es": "un volcán"
+			},
+			{
+				"de": "/{das Kunsthandwerk|die Handwerksarbeit}",
+				"es": "la artesanía"
+			},
+			{
+				"de": "/{ein Stil|ein Baustil}",
+				"es": "un estilo"
+			},
+			{
+				"de": "ein Hafen",
+				"es": "un puerto"
+			},
+			{
+				"de": "das Klima",
+				"es": "el clima"
+			},
+			{
+				"de": "die Schönheit",
+				"es": "la belleza"
+			},
+			{
+				"de": "eine Hochebene",
+				"es": "un altiplano"
+			},
+			{
+				"de": "/{warm|heiß}",
+				"es": "cálid%{o}"
+			},
+			{
+				"de": "ein Naturschutzgebiet",
+				"es": "una reserva~{natural| #}"
+			},
+			{
+				"de": "/{ein Rat|ein Tipp}",
+				"es": "un consejo"
+			},
+			{
+				"de": "/{%{etw}|%{jdn}} /{treffen|erwischen}",
+				"es": "pillar /{algo|a alguien}"
+			},
+			{
+				"de": "/{die Sicht|das Sehen|der Blick}",
+				"es": "la vista"
+			},
+			{
+				"de": "der Wert",
+				"es": "el valor"
+			},
+			{
+				"de": "ein Dokument",
+				"es": "un documento"
+			},
+			{
+				"de": "%{etw} aufbewahren",
+				"es": "guardar algo"
+			},
+			{
+				"de": "sicher",
+				"es": "segur%{o}"
+			},
+			{
+				"de": "ein Geldschein",
+				"es": "un billete"
+			},
+			{
+				"de": "eine Krankheit",
+				"es": "una enfermedad"
+			},
+			{
+				"de": "Maya-",
+				"es": "maya"
+			},
+			{
+				"de": "die Höhe",
+				"es": "la altitud"
+			},
+			{
+				"de": "ein Original",
+				"es": "un original"
+			},
+			{
+				"de": "%{etw} organisieren",
+				"es": "organizar algo"
+			},
+			{
+				"de": "ein Reiseführer~{Buch| #}",
+				"es": "una guía~{de viajes| #}"
+			},
+			{
+				"de": "ein Paradies",
+				"es": "un paraíso"
+			}
+		],
+		"Unidad 8 — Ejercicio 2: Consejos para turistas": [
+			{
+				"de": "ein Rucksack",
+				"es": "una mochila"
+			},
+			{
+				"de": "/{eine Route|ein Weg}",
+				"es": "una ruta"
+			},
+			{
+				"de": "eine Ruine",
+				"es": "una ruina"
+			},
+			{
+				"de": "/{%{etw} verpassen|sich %{etw} entgehen lassen}",
+				"es": "perderse~{-ie-| #} algo"
+			},
+			{
+				"de": "eine Mückenschutzcreme",
+				"es": "una crema antimosquitos"
+			},
+			{
+				"de": "ein Plan",
+				"es": "un plan"
+			},
+			{
+				"de": "/{wenn|falls}",
+				"es": "si"
+			},
+			{
+				"de": "ein Fotoapparat",
+				"es": "una cámara de fotos"
+			},
+			{
+				"de": "ein Wasserhahn",
+				"es": "un grifo"
+			},
+			{
+				"de": "eine Creme",
+				"es": "una crema"
+			},
+			{
+				"de": "das Wechselgeld",
+				"es": "el cambio"
+			},
+			{
+				"de": "wertvoll",
+				"es": "de valor"
+			},
+			{
+				"de": "eine Flasche",
+				"es": "una botella"
+			},
+			{
+				"de": "ein Reisepass",
+				"es": "un pasaporte"
+			},
+			{
+				"de": "eine Fotokopie",
+				"es": "una fotocopia"
+			},
+			{
+				"de": "/{sichtbar|~{gut|# }zu sehen}",
+				"es": "a la vista"
+			}
+		],
+		"Unidad 8 — Ejercicio 4: Ciudad de Guatemala": [
+			{
+				"de": "/{der Tod|der Todesfall}",
+				"es": "la muerte"
+			},
+			{
+				"de": "eine Tracht",
+				"es": "un traje~{típico| #}"
+			},
+			{
+				"de": "/{ein Minister|eine Ministerin}",
+				"es": "/{un ministro|una ministra}"
+			},
+			{
+				"de": "/{das Elend|die Armut}",
+				"es": "la miseria"
+			},
+			{
+				"de": "die Kriminalität",
+				"es": "la criminalidad"
+			},
+			{
+				"de": "das Trinkwasser",
+				"es": "el agua potable"
+			},
+			{
+				"de": "ein Elendsviertel",
+				"es": "una zona de miseria"
+			},
+			{
+				"de": "kulturell",
+				"es": "cultural"
+			},
+			{
+				"de": "der Reichtum",
+				"es": "la riqueza"
+			},
+			{
+				"de": "%{etw} verursachen",
+				"es": "causar algo"
+			},
+			{
+				"de": "Mittelamerika",
+				"es": "Centroamérica"
+			},
+			{
+				"de": "die Umweltverschmutzung",
+				"es": "la contaminación"
+			},
+			{
+				"de": "eine Regierung",
+				"es": "un gobierno"
+			},
+			{
+				"de": "%{jdm} %{etw} zeigen",
+				"es": "mostrar~{-ue-| #} algo a alguien"
+			},
+			{
+				"de": "der Verkehr",
+				"es": "el tráfico"
+			},
+			{
+				"de": "verschmutzt~{sein| #}",
+				"es": "~{estar|# }contaminad%{o}"
+			}
 		]
 	}
 }
