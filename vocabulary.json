@@ -5,30 +5,14 @@
 	"secondaryDisplay": "spanisch",
 	
 	"templates": {
-		"o": {
-			"display": "o, -a",
-			"word": ["o", "a", "os", "as"]
-		},
-		"e": ["e", "es"],
-		"alg": {
-			"display": "algo / alguien",
-			"word": ["alguien", "algo"]
-		},
-		"jdn": {
-			"display": "jdn.",
-			"word": ["jdn.", "jemanden"]
-		},
-		"jdm": {
-			"display": "jdm.",
-			"word": ["jdm.", "jemandem"]
-		},
-		"etw": {
-			"display": "etw.",
-			"word": ["etw.", "etwas"]
-		}
+		"o": "*{o, -a|/{o|a}?{s}}",
+		"alg": "*{algo / alguien|alg/{o|uien}}",
+		"jdn": "*{jdn.|j/{dn.|emanden}}",
+		"jdm": "*{jdm.|j/{dm.|emandem}}",
+		"etw": "*{etw.|etw/{.|as}}"
 	},
 	"sections": {
-		"-Nuevas palabras 1": [
+		"~~DEPR -Nuevas palabras 1": [
 			{
 				"de": ["das wäre genial", "es wäre genial"],
 				"es": "sería genial"
@@ -163,7 +147,7 @@
 				"es": "correr"
 			}
 		],
-		"-Nuevas palabras 2": [
+		"~~DEPR -Nuevas palabras 2": [
 			{
 				"de": "verneinen",
 				"es": "negar"
@@ -310,7 +294,7 @@
 				}
 			}
 		],
-		"Unidad 1 — Primer paso: En el barrio La Latina": [
+		"~~DEPR Unidad 1 — Primer paso: En el barrio La Latina": [
 			{
 				"de": "umziehen",
 				"es": "mudarse"
@@ -410,7 +394,7 @@
 				"es": "¿Me cobras?"
 			}
 		],
-		"Unidad 1 – Texto: El primer día": [
+		"~~DEPR Unidad 1 – Texto: El primer día": [
 			{
 				"de": "sich über etwas ärgern",
 				"es": "enfadarse por algo"
@@ -613,7 +597,7 @@
 				"es": "una posibilidad"
 			}
 		],
-		"Unidad 2 – Texto: Todos me quieren tomar el pelo": [
+		"~~DEPR Unidad 2 – Texto: Todos me quieren tomar el pelo": [
 			{
 				"de": ["ein Junge", "ein Bursche", "eine junge Frau"],
 				"es": ["un chaval", "una chavala"]
@@ -744,7 +728,7 @@
 		],
 		"Unidad 3 – Texto: Conversación de vecinos": [
 			{
-				"de": "etw. mieten; jdm. etw. vermieten",
+				"de": "/{%{etw} mieten|%{jdm} %{etw} vermieten}",
 				"es": "alquilar algo a alguien"
 			},
 			{
@@ -764,19 +748,19 @@
 				"es": "un corto"
 			},
 			{
-				"de": "etw. behalten",
+				"de": "%{etw} behalten",
 				"es": "guardar algo"
 			},
 			{
-				"de": "etw. schon seit (+ Zeitraum) tun",
-				"es": "llevar (+ Zeitraum)"
+				"de": "%{etw} schon seit!{ (+ Zeitraum)} tun",
+				"es": "llevar!{ (+ Zeitraum)}"
 			},
 			{
 				"de": "Nichts da!",
 				"es": "De eso nada."
 			},
 			{
-				"de": "(Adj. +) werden",
+				"de": "!{(Adj. +) }werden",
 				"es": "hacerse"
 			},
 			{
@@ -788,8 +772,8 @@
 				"es": "un café"
 			},
 			{
-				"de": "etw. nach und nach / immer mehr tun",
-				"es": "ir"
+				"de": "%{etw} /{nach und nach|immer mehr} tun",
+				"es": "ir!{ (+ gerundio)}"
 			},
 			{
 				"de": "ein Gefallen",
@@ -800,15 +784,15 @@
 				"es": "hasta que"
 			},
 			{
-				"de": "ein Student, eine Studentin",
-				"es": "un / una estudiante"
+				"de": "/{ein Student|eine Studentin}",
+				"es": "un?{a} estudiante"
 			},
 			{
 				"de": "Andalusien",
 				"es": "Andalucía"
 			},
 			{
-				"de": "an etw. teilnehmen",
+				"de": "an %{etw} teilnehmen",
 				"es": "participar en algo"
 			},
 			{
@@ -816,15 +800,15 @@
 				"es": "un churro"
 			},
 			{
-				"de": "etw. für / anstelle von jdm. tun",
+				"de": "%{etw} /{für|anstelle} von %{jdm} tun",
 				"es": "hacer algo por alguien"
 			},
 			{
 				"de": "drehen",
-				"es": "rodar (-ue-)"
+				"es": "rodar!{ (-ue-)}"
 			},
 			{
-				"de": "gewinnen, drankommen",
+				"de": "/{gewinnen|drankommen}",
 				"es": "tocar a alguien"
 			},
 			{
@@ -844,7 +828,7 @@
 				"es": "un décimo"
 			},
 			{
-				"de": "(das) Weihnachten",
+				"de": "!{(das) }Weihnachten",
 				"es": "la Navidad"
 			},
 			{
@@ -853,7 +837,7 @@
 			},
 			{
 				"de": "neugierig",
-				"es": "curioso, -a"
+				"es": "curios%{o}"
 			},
 			{
 				"de": "ein Ehepaar",
@@ -874,7 +858,7 @@
 				"es": "un castillo"
 			},
 			{
-				"de": "eine Kathedrale, ein Dom",
+				"de": "/{eine Kathedrale|ein Dom}",
 				"es": "una catedral"
 			},
 			{
@@ -898,7 +882,7 @@
 				"es": "un valle"
 			},
 			{
-				"de": "ein Palast, ein Schloss",
+				"de": "ein /{Palast|Schloss}",
 				"es": "un palacio"
 			},
 			{
@@ -915,11 +899,11 @@
 			},
 			{
 				"de": "jüdisch",
-				"es": "judío, -a"
+				"es": "judí%{o}"
 			},
 			{
 				"de": "christlich",
-				"es": "cristiano, -a"
+				"es": "cristian%{o}"
 			},
 			{
 				"de": "eine Bergkette",
@@ -936,44 +920,44 @@
 		],
 		"Unidad 4 – Texto: El tesoro de Boabdil": [
 			{
-				"de": "ein Angestellter, eine Angestellte",
-				"es": "un empleado, una empleada"
+				"de": "/{ein Angestellter|eine Angestellte}",
+				"es": "/{un empleado|una empleada}"
 			},
 			{
 				"de": "ein Bart",
 				"es": "una barba"
 			},
 			{
-				"de": "ein König, eine Königin",
-				"es": "un rey, una reina"
+				"de": "/{ein König|eine Königin}",
+				"es": "/{un rey|una reina}"
 			},
 			{
-				"de": "etw. / jdn. festhalten",
-				"es": "sujetar algo / a alguien"
+				"de": "/{%{etw}|%{jdn}} festhalten",
+				"es": "sujetar /{algo|a alguien}"
 			},
 			{
-				"de": "gegen etw. / jdn. kämpfen",
-				"es": "luchar contra algo / alguien"
+				"de": "gegen /{%{etw}|%{jdn}} kämpfen",
+				"es": "luchar contra /{algo|alguien}"
 			},
 			{
 				"de": "ein Schatz",
 				"es": "un tesoro"
 			},
 			{
-				"de": "etw. bemerken",
+				"de": "%{etw} bemerken",
 				"es": "darse cuenta de algo"
 			},
 			{
-				"de": "etw. / jdn. verlassen, etw. aufgeben",
-				"es": "abandonar algo / a alguien"
+				"de": "/{/{%{etw}|%{jdn}} verlassen|%{etw} aufgeben}",
+				"es": "abandonar /{algo|a alguien}"
 			},
 			{
 				"de": "ein Krieg",
 				"es": "una guerra"
 			},
 			{
-				"de": "jdm. folgen",
-				"es": "seguir (-i-/-i-) a alguien"
+				"de": "%{jdm} folgen",
+				"es": "seguir!{ (-i-/-i-)} a alguien"
 			},
 			{
 				"de": "ein Paar",
@@ -985,18 +969,18 @@
 			},
 			{
 				"de": "verschwinden",
-				"es": "desaparecer (-zco)"
+				"es": "desaparecer!{ (-zco)}"
 			},
 			{
 				"de": "ein Saal",
 				"es": "una sala"
 			},
 			{
-				"de": "etw. entdecken, etw. finden",
+				"de": "/{%{etw} entdecken|%{etw} finden}",
 				"es": "descubrir algo"
 			},
 			{
-				"de": "anfangen etw. zu tun",
+				"de": "anfangen %{etw} zu tun",
 				"es": "ponerse a hacer algo"
 			},
 			{
@@ -1004,7 +988,7 @@
 				"es": "el miedo"
 			},
 			{
-				"de": "etw. verstecken",
+				"de": "%{etw} verstecken",
 				"es": "esconder algo"
 			},
 			{
@@ -1024,12 +1008,12 @@
 				"es": "la paz"
 			},
 			{
-				"de": "jdm. auffallen",
+				"de": "%{jdm} auffallen",
 				"es": "llamar la atención a alguien"
 			},
 			{
-				"de": "etw. / jdn. beobachten",
-				"es": "observar algo / a alguien"
+				"de": "/{%{etw}|%{jdn}} beobachten",
+				"es": "observar /{algo|a alguien}"
 			},
 			{
 				"de": "eine Ausstellung",
@@ -1041,14 +1025,14 @@
 			},
 			{
 				"de": "gefährlich",
-				"es": "peligroso, -a"
+				"es": "peligros%{o}"
 			},
 			{
-				"de": "etw. wieder tun",
-				"es": "volver (-ue-) a hacer algo"
+				"de": "%{etw} wieder tun",
+				"es": "volver!{ (-ue-)} a hacer algo"
 			},
 			{
-				"de": "etw. schreien",
+				"de": "%{etw} schreien",
 				"es": "gritar algo"
 			}
 		],

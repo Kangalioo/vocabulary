@@ -113,7 +113,7 @@ public class MyApplication extends Application {
 		algorithm.processAnswer(currentWord, correct);
 		view.setImage(correct ? CORRECT_IMAGE : INCORRECT_IMAGE);
 		if (!correct) {
-			solution = new Text(currentWord.getSecondaryString());
+			solution = new Text(currentWord.getSecondary());
 			solution.setFont(new Font(50));
 			StackPane.setAlignment(solution, Pos.CENTER);
 			StackPane.setMargin(solution, new Insets(IMAGE_SIZE / 2 + 150, 0, 0, 0));
@@ -123,6 +123,6 @@ public class MyApplication extends Application {
 	
 	private void loadWord() {
 		currentWord = algorithm.pickWord();
-		text.setText(currentWord.getPrimaryString());
+		text.setText(currentWord.getPrimary());
 	}
 }

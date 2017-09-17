@@ -1,10 +1,14 @@
 public class Word {
-	private String[] primary;
-	private String[] secondary;
-	private String primaryDisplay = null;
-	private String secondaryDisplay = null;
+	private AnswerValidator primaryValidator;
+	private AnswerValidator secondaryValidator;
+	private String primary;
+	private String secondary;
 	
-	public Word(String[] primary, String[] secondary) {
+	public Word(AnswerValidator primaryValidator,
+			AnswerValidator secondaryValidator,
+			String primary, String secondary) {
+		this.primaryValidator = primaryValidator;
+		this.secondaryValidator = secondaryValidator;
 		this.primary = primary;
 		this.secondary = secondary;
 	}
@@ -13,57 +17,46 @@ public class Word {
 	
 	
 	public String toString() {
-		return "\"" + getPrimaryString() + ": " + getSecondaryString() + "\"";
+		return "\"" + getPrimary() + ": " + getSecondary() + "\"";
 	}
 	
-	public void setPrimary(String[] primary) {
+	public void setPrimary(String primary) {
 		this.primary = primary;
 	}
 	
-	public void setSecondary(String[] secondary) {
+	public void setSecondary(String secondary) {
 		this.secondary = secondary;
 	}
 	
-	public String[] getPrimary() {
+	public void setPrimaryValidator(AnswerValidator primaryValidator) {
+		this.primaryValidator = primaryValidator;
+	}
+	
+	public void setSecondaryValidator(AnswerValidator secondaryValidator) {
+		this.secondaryValidator = secondaryValidator;
+	}
+	
+	public AnswerValidator getPrimaryValidator() {
+		return primaryValidator;
+	}
+	
+	public AnswerValidator getSecondaryValidator() {
+		return secondaryValidator;
+	}
+	
+	public String getPrimary() {
 		return primary;
 	}
 	
-	public String[] getSecondary() {
+	public String getSecondary() {
 		return secondary;
 	}
 	
-	public void setPrimaryDisplay(String primaryDisplay) {
-		this.primaryDisplay = primaryDisplay;
-	}
-	
-	public void setSecondaryDisplay(String secondaryDisplay) {
-		this.secondaryDisplay = secondaryDisplay;
-	}
-	
-	public String getPrimaryString() {
-		if (primaryDisplay != null) return primaryDisplay;
-		return String.join(", ", primary);
-	}
-	
-	public String getSecondaryString() {
-		if (secondaryDisplay != null) return secondaryDisplay;
-		return String.join(", ", secondary);
-	}
-	
-	private static boolean isCorrect(String[] solution, String answer) {
-		for (String possibleSolution : solution) {
-			if (answer.equalsIgnoreCase(possibleSolution)) {
-				return true;
-			}
-		}
-		return false;
-	}
-	
 	public boolean isPrimaryCorrect(String answer) {
-		return isCorrect(primary, answer);
+		return primaryValidator.validate(answer);
 	}
 	
 	public boolean isSecondaryCorrect(String answer) {
-		return isCorrect(secondary, answer);
+		return secondaryValidator.validate(answer);
 	}
 }

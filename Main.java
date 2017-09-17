@@ -13,6 +13,12 @@ public class Main {
 	
 	
 	public static void main(String[] args) {
+		//~ String code = "*{un mandar|un?{a} /{mandar|mender}?{/{o|a}}}";
+		//~ String result = AnswerValidator.Converter.convert(code);
+		//~ System.out.println(code);
+		//~ System.out.println(" ->");
+		//~ System.out.println(result);
+		//~ if(true)return;
 		try {
 			vocabulary = Parser.parse(JSON_FILE);
 			start();
@@ -73,7 +79,7 @@ public class Main {
 	
 	private static boolean askWord(LearningAlgorithm algorithm) {
 		Word word = algorithm.pickWord();
-		System.out.print(Colorer.setColor(11) + word.getPrimaryString() +
+		System.out.print(Colorer.setColor(11) + word.getPrimary() +
 			" - " +	Colorer.setColor(-1));
 		String answer = System.console().readLine();
 		if (answer.equals("exit")) return true;
@@ -82,7 +88,7 @@ public class Main {
 			System.out.println(Colorer.colored("Correct!", 10));
 		} else {
 			System.out.println(Colorer.colored("Wrong! ", 9) +
-				Colorer.setAttribute(1) + word.getSecondaryString() +
+				Colorer.setAttribute(1) + word.getSecondary() +
 				Colorer.setAttribute(0) + ".");
 		}
 		System.out.println(Colorer.colored("Press enter to continue.", 8));
