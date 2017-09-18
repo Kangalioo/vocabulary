@@ -11,22 +11,35 @@ import javafx.scene.control.Button;
 import javafx.scene.input.KeyCode;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.control.CheckBox;
+import javafx.scene.layout.VBox;
+import javafx.scene.layout.Pane;
+import java.util.List;
+import java.util.ArrayList;
+import javafx.scene.text.TextFlow;
 
 public class MyApplication extends Application {
 	public static final int WINDOW_WIDTH = 960, WINDOW_HEIGHT = 640;
 	public static final Image CORRECT_IMAGE = new Image("correct.png"), INCORRECT_IMAGE = new Image("incorrect.png");
 	public static final int IMAGE_SIZE = 297;
+	public static final char[] FOREIGN_CHARACTERS = "áéíóúñ".toCharArray();
 	
 	
+	private Vocabulary vocabulary;
 	private LearningAlgorithm algorithm;
+	private Stage stage;
 	
+	private Scene scene;
 	private StackPane root;
-	
 	private Text text;
 	private TextField textField;
 	private Button button;
 	private ImageView view;
 	private Text solution = null;
+	
+	private Scene scene2;
+	private Pane root2;
+	private CheckBox[] checkboxes;
 	
 	private Word currentWord;
 	private boolean submitted = false;
@@ -34,19 +47,47 @@ public class MyApplication extends Application {
 	
 	@Override
 	public void init() {
-		algorithm = Main.getAlgorithm();
+		vocabulary = Main.getVocabulary();
 	}
 	
 	@Override
 	public void start(Stage stage) {
+		this.stage = stage;
+		prepareScene2();
+		
+		stage.setScene(scene2);
+		stage.show();
+	}
+	
+	private void prepareScene1() {
 		root = new StackPane();
 		
 		addElements();
 		addListeners();
 		loadWord();
 		
-		stage.setScene(new Scene(root, WINDOW_WIDTH, WINDOW_HEIGHT));
-		stage.show();
+		scene = new Scene(root, WINDOW_WIDTH, WINDOW_HEIGHT);
+	}
+	
+	private void prepareScene2() {
+		root2 = new VBox();
+		
+		addElements2();
+		
+		scene2 = new Scene(root2, WINDOW_WIDTH, WINDOW_HEIGHT);
+	}
+	
+	private void startTesting(boolean isNew) {
+		List<Section> sections = new ArrayList<>();
+		for (int i = 0; i < checkboxes.length; i++) {
+			if (checkboxes[i].isSelected()) {
+				sections.add(vocabulary.getSections().get(i));
+			}
+		}
+		List<Word> words = Section.combine(sections.toArray(new Section[0])).getWords();
+		algorithm = new SmartAlgorithm(words, isNew);
+		prepareScene1();
+		stage.setScene(scene);
 	}
 	
 	private void addListeners() {
@@ -61,15 +102,53 @@ public class MyApplication extends Application {
 		});
 	}
 	
+	private void addElements2() {
+		checkboxes = new CheckBox[vocabulary.getSections().size()];
+		int index = 0;
+		for (Section section : vocabulary.getSections()) {
+			CheckBox box = new CheckBox(section.getName());
+			root2.getChildren().add(box);
+			checkboxes[index++] = box;
+		}
+		Button learnButton = new Button("Learn new");
+		Button reviseButton = new Button("Revise");
+		learnButton.setOnMouseClicked(e -> {
+			startTesting(true);
+		});
+		reviseButton.setOnMouseClicked(e -> {
+			startTesting(false);
+		});
+		root2.getChildren().add(learnButton);
+		root2.getChildren().add(reviseButton);
+	}
+	
 	private void addElements() {
 		text = new Text();
 		text.setFont(new Font(60));
+		//~ TextFlow textFlow = new TextFlow(text);
+		//~ StackPane.setAlignment(textFlow, Pos.TOP_CENTER);
+		//~ root.getChildren().add(textFlow);
 		root.getChildren().add(text);
 		StackPane.setAlignment(text, Pos.TOP_CENTER);
 		StackPane.setMargin(text, new Insets(20, 0, 0, 0));
 		
+		VBox vbox = new VBox();
+		root.getChildren().add(vbox);
+		StackPane.setAlignment(root, Pos.CENTER_LEFT);
+		for (char c : FOREIGN_CHARACTERS) {
+			Button button = new Button("" + c);
+			button.setOnMouseClicked(e -> {
+				textField.setText(textField.getText() + c);
+				textField.requestFocus();
+				textField.deselect();
+			});
+			button.setFont(new Font(30));
+			vbox.getChildren().add(button);
+		}
+		
 		textField = new TextField();
 		textField.setFont(new Font(50));
+		textField.requestFocus();
 		root.getChildren().add(textField);
 		StackPane.setAlignment(textField, Pos.BOTTOM_LEFT);
 		

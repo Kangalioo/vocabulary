@@ -32,7 +32,7 @@
 			},
 			{
 				"de": "!{(eine E-Mail) }schicken",
-				"es": "mandar!{ (un correo electrónico)}"
+				"es": "mandar~{un correo electrónico| #}"
 			},
 			{
 				"de": "antworten",
@@ -315,7 +315,7 @@
 				"es": "la fiebre"
 			},
 			{
-				"de": "verheiratet!{ (sein)}",
+				"de": "verheiratet~{sein| #}",
 				"es": "!{(estar) }casad%{o}"
 			},
 			{
@@ -324,11 +324,11 @@
 			},
 			{
 				"de": "/{%{etw} anfangen|%{etw} beginnen}",
-				"es": "comenzar!{ (-ie-)} algo"
+				"es": "comenzar~{-ie-| #} algo"
 			},
 			{
 				"de": "%{jdn} um %{etw} bitten",
-				"es": "pedir!{ (-i-/-i-)} algo a alguien"
+				"es": "pedir~{-i-/-i-| #} algo a alguien"
 			},
 			{
 				"de": "/{ein Guatemalteke|eine Guatemaltekin}",
@@ -394,7 +394,7 @@
 			},
 			{
 				"de": "%{etw} anschalten",
-				"es": "encender!{ (-ie-)} algo"
+				"es": "encender~{-ie-| #} algo"
 			},
 			{
 				"de": "ein Film",
@@ -410,7 +410,7 @@
 			},
 			{
 				"de": "auf zu!{ ...}",
-				"es": "a por"
+				"es": "a por!{ ...}"
 			},
 			{
 				"de": "das Fernsehen",
@@ -450,7 +450,7 @@
 			},
 			{
 				"de": "nur Bahnhof verstehen",
-				"es": "no entender!{ (-ie-)} ni papa"
+				"es": "no entender~{-ie-| #} ni papa"
 			},
 			{
 				"de": "Spaß haben",
@@ -470,7 +470,7 @@
 			},
 			{
 				"de": "sich an /{%{etw}|%{jdn}} erinnern",
-				"es": "acordarse!{ (-ue-)} de /{algo|alguien}"
+				"es": "acordarse~{-ue-| #} de /{algo|alguien}"
 			},
 			{
 				"de": "aufmerksam",
@@ -481,7 +481,7 @@
 				"es": "un aparato"
 			},
 			{
-				"de": "/{immer!{ (+ Steigerungsform des Adj.)}|immer mehr!{ (+ Subst.)}}",
+				"de": "/{immer~{+ Steigerungsform des Adj.| #}|immer mehr~{+ Subst.| #}}",
 				"es": "cada vez más"
 			},
 			{
@@ -493,7 +493,7 @@
 				"es": "acercarse a /{algo|alguien}"
 			},
 			{
-				"de": "/{zu!{ (+ adj.)}|zuviel}",
+				"de": "/{zu~{+ adj.| #}|zuviel}",
 				"es": "demasiado"
 			},
 			{
@@ -501,7 +501,7 @@
 				"es": "un acento"
 			},
 			{
-				"de": "verrückt!{ (sein)}",
+				"de": "verrückt~{sein| #}",
 				"es": "!{(estar) }loc%{o}"
 			},
 			{
@@ -510,7 +510,7 @@
 			},
 			{
 				"de": "/{da|weil}",
-				"es": "como!{ (Konj.)}"
+				"es": "como~{Konj.| #}"
 			},
 			{
 				"de": "/{eine Technik|eine Technologie}",
@@ -518,7 +518,7 @@
 			},
 			{
 				"de": "in %{etw} !{(hinein)}passen",
-				"es": "caber!{ (1ª pers. quepo)} en algo"
+				"es": "caber~{1ª pers. quepo| #} en algo"
 			},
 			{
 				"de": "nicht einmal",
@@ -552,7 +552,7 @@
 			},
 			{
 				"de": "/{%{jdm} %{etw} befehlen|das Sagen haben}",
-				"es": "mandar!{ (algo a alguien)}"
+				"es": "mandar~{algo a alguien| #}"
 			},
 			{
 				"de": "ein Casting",
@@ -579,7 +579,7 @@
 				"es": "reírse de /{algo|alguien}"
 			},
 			{
-				"de": "%{etw}!{ (er)}schaffen",
+				"de": "%{etw}~{er| #}schaffen",
 				"es": "crear algo"
 			},
 			{
@@ -635,7 +635,7 @@
 				"es": "estar hart%{o} de algo"
 			},
 			{
-				"de": "%{etw}!{ (ab-)}schneiden",
+				"de": "%{etw}~{ab?{-}| #}schneiden",
 				"es": "cortar algo"
 			},
 			{
@@ -655,7 +655,7 @@
 				"es": "sol%{o}"
 			}
 		],
-		"Unidad 3 – Texto: Conversación de vecinos": [
+		"Unidad 3 — Texto: Conversación de vecinos": [
 			{
 				"de": "/{%{etw} mieten|%{jdm} %{etw} vermieten}",
 				"es": "alquilar algo a alguien"
@@ -681,8 +681,8 @@
 				"es": "guardar algo"
 			},
 			{
-				"de": "%{etw} schon seit!{ (+ Zeitraum)} tun",
-				"es": "llevar!{ (+ Zeitraum)}"
+				"de": "%{etw} schon seit~{+ Zeitraum| #} tun",
+				"es": "llevar~{+ Zeitraum| #}"
 			},
 			{
 				"de": "Nichts da!",
@@ -702,7 +702,7 @@
 			},
 			{
 				"de": "%{etw} /{nach und nach|immer mehr} tun",
-				"es": "ir!{ (+ gerundio)}"
+				"es": "ir~{+ gerundio| #}"
 			},
 			{
 				"de": "ein Gefallen",
@@ -734,7 +734,7 @@
 			},
 			{
 				"de": "drehen",
-				"es": "rodar!{ (-ue-)}"
+				"es": "rodar~{-ue-| #}"
 			},
 			{
 				"de": "/{gewinnen|drankommen}",
@@ -781,7 +781,7 @@
 				"es": "una docena"
 			}
 		],
-		"Unidad 4 – Primer paso: Entre Oriente y Occidente": [
+		"Unidad 4 — Primer paso: Entre Oriente y Occidente": [
 			{
 				"de": "eine Burg",
 				"es": "un castillo"
@@ -847,7 +847,7 @@
 				"es": "un desierto"
 			}
 		],
-		"Unidad 4 – Texto: El tesoro de Boabdil": [
+		"Unidad 4 — Texto: El tesoro de Boabdil": [
 			{
 				"de": "/{ein Angestellter|eine Angestellte}",
 				"es": "/{un empleado|una empleada}"
@@ -886,7 +886,7 @@
 			},
 			{
 				"de": "%{jdm} folgen",
-				"es": "seguir!{ (-i-/-i-)} a alguien"
+				"es": "seguir~{-i-/-i-| #} a alguien"
 			},
 			{
 				"de": "ein Paar",
@@ -898,7 +898,7 @@
 			},
 			{
 				"de": "verschwinden",
-				"es": "desaparecer!{ (-zco)}"
+				"es": "desaparecer~{-zco| #}"
 			},
 			{
 				"de": "ein Saal",
@@ -958,7 +958,7 @@
 			},
 			{
 				"de": "%{etw} wieder tun",
-				"es": "volver!{ (-ue-)} a hacer algo"
+				"es": "volver~{-ue-| #} a hacer algo"
 			},
 			{
 				"de": "%{etw} schreien",
@@ -1033,7 +1033,7 @@
 				"es": "fumar"
 			},
 			{
-				"de": "/{mein!{ (fester)} Freund}{meine!{ (feste)} Freundin}",
+				"de": "/{mein~{fester| #} Freund}{meine~{feste| #} Freundin}",
 				"es": "mi chico/{o|a}"
 			},
 			{
@@ -1053,7 +1053,7 @@
 				"es": "adecuad%{o}"
 			},
 			{
-				"de": "/{in}{bis!{ (zeitl.)}}",
+				"de": "/{in}{bis~{zeitl.| #}}",
 				"es": "dentro de"
 			},
 			{
@@ -1066,7 +1066,7 @@
 			},
 			{
 				"de": "%{jdm} vertrauen",
-				"es": "confiar!{ (-ío)} en alguien"
+				"es": "confiar~{-ío| #} en alguien"
 			},
 			{
 				"de": "tolerant",
@@ -1098,7 +1098,7 @@
 			},
 			{
 				"de": "%{jdm} %{etw} empfehlen",
-				"es": "recomendar!{ (-ie-)} algo a alguien"
+				"es": "recomendar~{-ie-| #} algo a alguien"
 			},
 			{
 				"de": "der Alkohol",
@@ -1430,7 +1430,7 @@
 			},
 			{
 				"de": "Kalifornien",
-				"es": "California!{ (f.)}"
+				"es": "California~{f.| #}"
 			},
 			{
 				"de": "/{ein Lateinamerikaner|eine Lateinamerikanerin}",
@@ -1446,14 +1446,14 @@
 			},
 			{
 				"de": "%{etw} anzünden",
-				"es": "encender!{ (-ie-)} algo"
+				"es": "encender~{-ie-| #} algo"
 			},
 			{
 				"de": "kitschig",
 				"es": "kitsch"
 			},
 			{
-				"de": "gelegen!{ (sein)}",
+				"de": "gelegen~{sein| #}",
 				"es": "!{(estar) }situad%{o}"
 			},
 			{
