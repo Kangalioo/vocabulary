@@ -17,6 +17,12 @@ import javafx.scene.layout.Pane;
 import java.util.List;
 import java.util.ArrayList;
 import javafx.scene.text.TextFlow;
+import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.SimpleBooleanProperty;
+import javafx.beans.value.ObservableValue;
+import javafx.scene.control.ListView;
+import javafx.scene.control.cell.CheckBoxListCell;
+import javafx.util.Callback;
 
 public class MyApplication extends Application {
 	public static final int WINDOW_WIDTH = 960, WINDOW_HEIGHT = 640;
@@ -39,7 +45,7 @@ public class MyApplication extends Application {
 	
 	private Scene scene2;
 	private Pane root2;
-	private CheckBox[] checkboxes;
+	private boolean[] checkboxes;
 	
 	private Word currentWord;
 	private boolean submitted = false;
@@ -80,7 +86,7 @@ public class MyApplication extends Application {
 	private void startTesting(boolean isNew) {
 		List<Section> sections = new ArrayList<>();
 		for (int i = 0; i < checkboxes.length; i++) {
-			if (checkboxes[i].isSelected()) {
+			if (checkboxes[i]) {
 				sections.add(vocabulary.getSections().get(i));
 			}
 		}
@@ -103,13 +109,31 @@ public class MyApplication extends Application {
 	}
 	
 	private void addElements2() {
-		checkboxes = new CheckBox[vocabulary.getSections().size()];
-		int index = 0;
+		ListView<String> listView = new ListView<>();
+		//~ listView.prefHeightProperty().bindBidirectional(
+			//~ stage.widthProperty().divide(2));
+		root2.getChildren().add(listView);
+		checkboxes = new boolean[vocabulary.getSections().size()];
+		
+		int index = 1; // *intensive breathing*
 		for (Section section : vocabulary.getSections()) {
-			CheckBox box = new CheckBox(section.getName());
-			root2.getChildren().add(box);
-			checkboxes[index++] = box;
+			listView.getItems().add(index + ") " + section.getName());
+			index++;
 		}
+		
+		listView.setCellFactory(CheckBoxListCell.forListView(new Callback<String, ObservableValue<Boolean>>() {
+			@Override
+			public ObservableValue<Boolean> call(String item) {
+				BooleanProperty observable = new SimpleBooleanProperty();
+				observable.addListener((obs, wasSelected, isNowSelected) -> {
+					String indexString = item.substring(0, item.indexOf(")"));
+					int index = Integer.parseInt(indexString) - 1;
+					checkboxes[index] = isNowSelected;
+				});
+				return observable;
+			}
+		}));
+		
 		Button learnButton = new Button(Translator.get("gui1"));
 		Button reviseButton = new Button(Translator.get("gui2"));
 		learnButton.setOnMouseClicked(e -> {
