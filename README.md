@@ -23,4 +23,4 @@ Unix-like:
 ```java -cp ".:path/to/minimal-json-x.x.x.jar" Main```
 
 ### Automatically
-I am providing a zip-file with everything you need included (Not yet, actually, but I am planning to do that... somewhen in the future). Unpack it and run the ```START_WINDOWS.BAT``` or the ```START_LINUX.sh``` script, depending on your OS (```START_LINUX.sh``` probably also works for any other Unix-like OS).
+I am providing a zip-file with everything you need included (Not yet, actually, but I am planning to do that... somewhen in the future). Unpack it and run the ```START_WINDOWS.BAT``` or the ```START_UNIX.sh``` script, depending on your OS (```START_UNIX.sh``` works for any unix-like OS with bash, so Linux and MacOS should be able to handle it).
