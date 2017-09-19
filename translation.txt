@@ -1,0 +1,38 @@
+english
+german
+
+cui1
+Are you revising your vocabulary (r) or are you learning your vocabulary new (n)? (r/n) 
+Wiederholen Sie Ihr Vokabular (r) oder lernen Sie es zum ersten Mal (n)? (r/n) 
+
+cui2
+Select one or more, comma-seperated: 
+Wählen Sie eines oder mehrere aus, mit Kommata getrennt: 
+
+cui3
+Correct!
+Korrekt!
+
+cui4
+Wrong!
+Falsch!
+
+cui5
+Press enter to continue.
+Drücken sie Enter um fortzufahren.
+
+gui1
+Learn new
+Neu lernen
+
+gui2
+Revise
+Wiederholen
+
+gui3
+Submit
+Prüfen
+
+gui4
+Continue
+Weiter

@@ -12,7 +12,7 @@ public class CUIApplication {
 		
 		boolean isNew;
 		while (true) {
-			System.out.print("Are you revising your vocabulary (r) or are you learning your vocabulary new (n)? (r/n) ");
+			System.out.print(Translator.get("cui1"));
 			String input = System.console().readLine();
 			if (input.equalsIgnoreCase("r")) isNew = false;
 			else if (input.equalsIgnoreCase("n")) isNew = true;
@@ -37,13 +37,14 @@ public class CUIApplication {
 		if (answer.equals("exit")) return true;
 		boolean correct = word.isSecondaryCorrect(answer);
 		if (correct) {
-			System.out.println(Colorer.colored("Correct!", 10));
+			System.out.println(Colorer.colored(Translator.get("cui3"), 10));
 		} else {
-			System.out.println(Colorer.colored("Wrong! ", 9) +
+			System.out.println(
+				Colorer.colored(Translator.get("cui4") + " ", 9) +
 				Colorer.setAttribute(1) + word.getSecondary() +
 				Colorer.setAttribute(0) + ".");
 		}
-		System.out.println(Colorer.colored("Press enter to continue.", 8));
+		System.out.println(Colorer.colored(Translator.get("cui5"), 8));
 		System.console().readLine();
 		algorithm.processAnswer(word, correct);
 		
@@ -55,7 +56,7 @@ public class CUIApplication {
 			System.out.println(" " + String.format("%02d", (i + 1)) + ") " +
 				vocabulary.getSections().get(i).getName());
 		}
-		System.out.print("Select one or more, comma-seperated: ");
+		System.out.print(Translator.get("cui2"));
 		String input = System.console().readLine();
 		String[] tokens = input.split(" *, *");
 		Section[] sections = Arrays.stream(tokens)

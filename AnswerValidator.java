@@ -143,7 +143,7 @@ public class AnswerValidator {
 			display.append(placement0 + "(" + hintDisplay + ")" + placement1);
 			placement0 = Converter.convert(placement0)[0];
 			placement1 = Converter.convert(placement1)[0];
-			regex.append(placement0 + "\\(?" + hint + "\\)?" + placement1);
+			regex.append("(" + placement0 + "\\(?" + hint + "\\)?" + placement1 + ")?");
 			
 			i = expressionEnd;
 		}
@@ -195,6 +195,10 @@ public class AnswerValidator {
 	
 	public boolean validate(String answer) {
 		return (answer.matches(regex));
+	}
+	
+	public String getRegex() {
+		return regex;
 	}
 	
 	public String getDisplayString() {

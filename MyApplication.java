@@ -110,8 +110,8 @@ public class MyApplication extends Application {
 			root2.getChildren().add(box);
 			checkboxes[index++] = box;
 		}
-		Button learnButton = new Button("Learn new");
-		Button reviseButton = new Button("Revise");
+		Button learnButton = new Button(Translator.get("gui1"));
+		Button reviseButton = new Button(Translator.get("gui2"));
 		learnButton.setOnMouseClicked(e -> {
 			startTesting(true);
 		});
@@ -141,6 +141,8 @@ public class MyApplication extends Application {
 				textField.setText(textField.getText() + c);
 				textField.requestFocus();
 				textField.deselect();
+				// FIXME
+				textField.end();
 			});
 			button.setFont(new Font(30));
 			vbox.getChildren().add(button);
@@ -152,7 +154,7 @@ public class MyApplication extends Application {
 		root.getChildren().add(textField);
 		StackPane.setAlignment(textField, Pos.BOTTOM_LEFT);
 		
-		button = new Button("Submit");
+		button = new Button(Translator.get("gui3"));
 		button.setMinHeight(textField.getHeight());
 		button.setFont(new Font(40));
 		root.getChildren().add(button);
@@ -168,7 +170,7 @@ public class MyApplication extends Application {
 	private void buttonPress() {
 		if (submitted) {
 			loadWord();
-			button.setText("Submit");
+			button.setText(Translator.get("gui3"));
 			if (solution != null) {
 				root.getChildren().removeAll(solution);
 				solution = null;
@@ -180,7 +182,7 @@ public class MyApplication extends Application {
 			submitted = false;
 		} else {
 			processAnswer();
-			button.setText("Continue");
+			button.setText(Translator.get("gui4"));
 			textField.setDisable(true);
 			submitted = true;
 		}

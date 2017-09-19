@@ -336,7 +336,7 @@
 			},
 			{
 				"de": "eine Hausfrau",
-				"es": "un amade casa"
+				"es": "un ama de casa"
 			},
 			{
 				"de": "das Taschengeld",
@@ -1709,6 +1709,16 @@
 			{
 				"de": "verschmutzt~{sein| #}",
 				"es": "~{estar|# }contaminad%{o}"
+			}
+		],
+		"~Test": [
+			{
+				"de": "nur Bahnhof verstehen",
+				"es": "no entender~{-ie-| #} ni papa"
+			},
+			{
+				"de": "nur Bahnhof verstehen",
+				"es": "no entender~{-ie-| #} ni papa"
 			}
 		]
 	}
