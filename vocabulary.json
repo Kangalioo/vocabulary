@@ -502,7 +502,7 @@
 			},
 			{
 				"de": "verrückt~{sein| #}",
-				"es": "!{(estar) }loc%{o}"
+				"es": "~{estar|# }loc%{o}"
 			},
 			{
 				"de": "eine Schule",
