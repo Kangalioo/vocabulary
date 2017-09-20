@@ -36,3 +36,7 @@ Prüfen
 gui4
 Continue
 Weiter
+
+gui5
+Selected words: 
+Ausgewählte Vokabeln: 

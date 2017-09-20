@@ -13,6 +13,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.control.CheckBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import java.util.List;
 import java.util.ArrayList;
@@ -23,12 +24,24 @@ import javafx.beans.value.ObservableValue;
 import javafx.scene.control.ListView;
 import javafx.scene.control.cell.CheckBoxListCell;
 import javafx.util.Callback;
+import javafx.scene.layout.Priority;
+import javafx.scene.text.TextAlignment;
+import javafx.scene.Group;
+import javafx.scene.layout.FlowPane;
+import javafx.geometry.Orientation;
+import javafx.event.EventType;
+import javafx.event.EventHandler;
+import javafx.scene.input.KeyEvent;
 
 public class MyApplication extends Application {
-	public static final int WINDOW_WIDTH = 960, WINDOW_HEIGHT = 640;
+	public static final int WINDOW_WIDTH = 960, WINDOW_HEIGHT = 650;
 	public static final Image CORRECT_IMAGE = new Image("correct.png"), INCORRECT_IMAGE = new Image("incorrect.png");
 	public static final int IMAGE_SIZE = 297;
-	public static final char[] FOREIGN_CHARACTERS = "áéíóúñ".toCharArray();
+	public static final char[] FOREIGN_CHARACTERS = 
+		"áàâäéèêëíîïóôöúùûüñç".toCharArray();
+	// I have to use this because Windows cannot handle the above *sigh*
+	//~ public static final char[] FOREIGN_CHARACTERS =
+		//~ {'á', 'é', 'í', 'ó', 'ú', 'ñ'};
 	
 	
 	private Vocabulary vocabulary;
@@ -44,7 +57,9 @@ public class MyApplication extends Application {
 	private Text solution = null;
 	
 	private Scene scene2;
-	private Pane root2;
+	private VBox root2;
+	private Button[] foreignCharacterButtons;
+	private int selectedWords = 0;
 	private boolean[] checkboxes;
 	
 	private Word currentWord;
@@ -73,14 +88,39 @@ public class MyApplication extends Application {
 		loadWord();
 		
 		scene = new Scene(root, WINDOW_WIDTH, WINDOW_HEIGHT);
+		scene.getStylesheets().add("stylesheet.css");
+		
+		EventHandler<KeyEvent> handler = e -> {
+			if (e.getCode() == KeyCode.SHIFT) {
+				boolean pressed;
+				if (e.getEventType() == KeyEvent.KEY_PRESSED) {
+					pressed = true;
+				} else if (e.getEventType() == KeyEvent.KEY_RELEASED) {
+					pressed = false;
+				} else {
+					return;
+				}
+				int index = 0;
+				for (Button b : foreignCharacterButtons) {
+					char character = FOREIGN_CHARACTERS[index];
+					if (pressed) character = Character.toUpperCase(character);
+					b.setText(String.valueOf(character));
+					index++;
+				}
+			}
+		};
+		scene.setOnKeyPressed(handler);
+		scene.setOnKeyReleased(handler);
 	}
 	
 	private void prepareScene2() {
-		root2 = new VBox();
+		root2 = new VBox(8);
+		root2.setAlignment(Pos.TOP_CENTER);
 		
 		addElements2();
 		
 		scene2 = new Scene(root2, WINDOW_WIDTH, WINDOW_HEIGHT);
+		scene2.getStylesheets().add("stylesheet.css");
 	}
 	
 	private void startTesting(boolean isNew) {
@@ -109,10 +149,23 @@ public class MyApplication extends Application {
 	}
 	
 	private void addElements2() {
+		Text words = new Text(Translator.get("gui5") + selectedWords);
+		words.setFont(new Font(20));
+		
+		Button learnButton = new Button(Translator.get("gui1"));
+		learnButton.setFont(new Font(20));
+		Button reviseButton = new Button(Translator.get("gui2"));
+		reviseButton.setFont(new Font(20));
+		learnButton.setDisable(true);
+		reviseButton.setDisable(true);
+		learnButton.setOnMouseClicked(e -> {
+			startTesting(true);
+		});
+		reviseButton.setOnMouseClicked(e -> {
+			startTesting(false);
+		});
+		
 		ListView<String> listView = new ListView<>();
-		//~ listView.prefHeightProperty().bindBidirectional(
-			//~ stage.widthProperty().divide(2));
-		root2.getChildren().add(listView);
 		checkboxes = new boolean[vocabulary.getSections().size()];
 		
 		int index = 1; // *intensive breathing*
@@ -129,26 +182,31 @@ public class MyApplication extends Application {
 					String indexString = item.substring(0, item.indexOf(")"));
 					int index = Integer.parseInt(indexString) - 1;
 					checkboxes[index] = isNowSelected;
+					int delta = vocabulary.getSections().get(index).getWords().size();
+					if (isNowSelected) {
+						selectedWords += delta;
+					} else {
+						selectedWords -= delta;
+					}
+					learnButton.setDisable(selectedWords == 0);
+					reviseButton.setDisable(selectedWords == 0);
+					words.setText(Translator.get("gui5") + selectedWords);
 				});
 				return observable;
 			}
 		}));
 		
-		Button learnButton = new Button(Translator.get("gui1"));
-		Button reviseButton = new Button(Translator.get("gui2"));
-		learnButton.setOnMouseClicked(e -> {
-			startTesting(true);
-		});
-		reviseButton.setOnMouseClicked(e -> {
-			startTesting(false);
-		});
+		root2.getChildren().add(listView);
 		root2.getChildren().add(learnButton);
 		root2.getChildren().add(reviseButton);
+		root2.getChildren().add(words);
 	}
 	
 	private void addElements() {
 		text = new Text();
 		text.setFont(new Font(60));
+		text.wrappingWidthProperty().bind(stage.widthProperty());
+		text.setTextAlignment(TextAlignment.CENTER);
 		//~ TextFlow textFlow = new TextFlow(text);
 		//~ StackPane.setAlignment(textFlow, Pos.TOP_CENTER);
 		//~ root.getChildren().add(textFlow);
@@ -156,31 +214,52 @@ public class MyApplication extends Application {
 		StackPane.setAlignment(text, Pos.TOP_CENTER);
 		StackPane.setMargin(text, new Insets(20, 0, 0, 0));
 		
-		VBox vbox = new VBox();
+		textField = new TextField();
+		textField.setFont(new Font(50));
+		textField.requestFocus();
+		
+		button = new Button(Translator.get("gui3"));
+		button.setMinHeight(textField.getHeight());
+		button.setFont(new Font(50));
+		
+		// TODO: Make vbox not fill out entire horizontal space
+		FlowPane vbox = new FlowPane(Orientation.VERTICAL);
+		vbox.maxHeightProperty().bind(stage.heightProperty().subtract(textField.heightProperty()));
 		root.getChildren().add(vbox);
-		StackPane.setAlignment(root, Pos.CENTER_LEFT);
-		for (char c : FOREIGN_CHARACTERS) {
-			Button button = new Button("" + c);
+		StackPane.setAlignment(vbox, Pos.TOP_LEFT);
+		foreignCharacterButtons = new Button[FOREIGN_CHARACTERS.length];
+		for (int i = 0; i < FOREIGN_CHARACTERS.length; i++) {
+			char c = FOREIGN_CHARACTERS[i];
+			Button button = new Button(String.valueOf(c));
 			button.setOnMouseClicked(e -> {
 				textField.setText(textField.getText() + c);
 				textField.requestFocus();
 				textField.deselect();
-				// FIXME
+				// FIXME: Caret should not jump to end if
+				// its position was somewhere else previously.
 				textField.end();
 			});
+			button.setOnMouseEntered(e -> {
+				button.setOpacity(1);
+			});
+			button.setOpacity(0.3);
+			button.setOnMouseExited(e -> {
+				button.setOpacity(0.3);
+			});
+			button.setMinWidth(70);
 			button.setFont(new Font(30));
 			vbox.getChildren().add(button);
+			foreignCharacterButtons[i] = button;
 		}
 		
-		textField = new TextField();
-		textField.setFont(new Font(50));
-		textField.requestFocus();
+		// TODO: Be abel to switch commenting on the section below
+		//~ HBox hbox = new HBox(10, textField, button);
+		//~ HBox.setHgrow(textField, Priority.ALWAYS);
+		//~ HBox.setHgrow(button, Priority.NEVER);
+		//~ hbox.setAlignment(Pos.BOTTOM_LEFT);
+		//~ root.getChildren().add(new Group(hbox));
 		root.getChildren().add(textField);
 		StackPane.setAlignment(textField, Pos.BOTTOM_LEFT);
-		
-		button = new Button(Translator.get("gui3"));
-		button.setMinHeight(textField.getHeight());
-		button.setFont(new Font(40));
 		root.getChildren().add(button);
 		StackPane.setAlignment(button, Pos.BOTTOM_RIGHT);
 		
