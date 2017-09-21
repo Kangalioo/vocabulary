@@ -32,16 +32,20 @@ import javafx.geometry.Orientation;
 import javafx.event.EventType;
 import javafx.event.EventHandler;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.Region;
+import javafx.scene.control.TreeView;
+import javafx.scene.control.cell.CheckBoxTreeCell;
+import javafx.scene.control.CheckBoxTreeItem;
 
 public class MyApplication extends Application {
 	public static final int WINDOW_WIDTH = 960, WINDOW_HEIGHT = 650;
 	public static final Image CORRECT_IMAGE = new Image("correct.png"), INCORRECT_IMAGE = new Image("incorrect.png");
 	public static final int IMAGE_SIZE = 297;
-	public static final char[] FOREIGN_CHARACTERS = 
-		"áàâäéèêëíîïóôöúùûüñç".toCharArray();
+	//~ public static final char[] FOREIGN_CHARACTERS = 
+		//~ "áàâäéèêëíîïóôöúùûüñç".toCharArray();
 	// I have to use this because Windows cannot handle the above *sigh*
-	//~ public static final char[] FOREIGN_CHARACTERS =
-		//~ {'á', 'é', 'í', 'ó', 'ú', 'ñ'};
+	public static final char[] FOREIGN_CHARACTERS =
+		{'á', 'à', 'â', 'ä', 'é', 'è', 'ê', 'ë', 'í', 'î', 'ï', 'ó', 'ô', 'ö', 'ú', 'ù', 'û', 'ü', 'ñ', 'ç'};
 	
 	
 	private Vocabulary vocabulary;
@@ -55,10 +59,10 @@ public class MyApplication extends Application {
 	private Button button;
 	private ImageView view;
 	private Text solution = null;
+	private Button[] foreignCharacterButtons;
 	
 	private Scene scene2;
 	private VBox root2;
-	private Button[] foreignCharacterButtons;
 	private int selectedWords = 0;
 	private boolean[] checkboxes;
 	
@@ -165,38 +169,70 @@ public class MyApplication extends Application {
 			startTesting(false);
 		});
 		
-		ListView<String> listView = new ListView<>();
+		//~ ListView<String> listView = new ListView<>();
+		//~ checkboxes = new boolean[vocabulary.getSections().size()];
+		
+		//~ int index = 1; // *intensive breathing*
+		//~ for (Section section : vocabulary.getSections()) {
+			//~ listView.getItems().add(index + ") " + section.getName());
+			//~ index++;
+		//~ }
+		
+		//~ listView.setCellFactory(CheckBoxListCell.forListView(
+				//~ new Callback<String, ObservableValue<Boolean>>() {
+			//~ @Override
+			//~ public ObservableValue<Boolean> call(String item) {
+				//~ BooleanProperty observable = new SimpleBooleanProperty();
+				//~ observable.addListener((obs, wasSelected, isNowSelected) -> {
+					//~ String indexString = item.substring(0, item.indexOf(")"));
+					//~ int index = Integer.parseInt(indexString) - 1;
+					//~ checkboxes[index] = isNowSelected;
+					//~ int delta = 
+						//~ vocabulary.getSections().get(index).getWords().size();
+					//~ if (isNowSelected) {
+						//~ selectedWords += delta;
+					//~ } else {
+						//~ selectedWords -= delta;
+					//~ }
+					//~ learnButton.setDisable(selectedWords == 0);
+					//~ reviseButton.setDisable(selectedWords == 0);
+					//~ words.setText(Translator.get("gui5") + selectedWords);
+				//~ });
+				//~ return observable;
+			//~ }
+		//~ }));
+		
+		CheckBoxTreeItem<String> rootItem = new CheckBoxTreeItem<>(Translator.get("gui6"));
+		rootItem.setExpanded(true);
 		checkboxes = new boolean[vocabulary.getSections().size()];
-		
-		int index = 1; // *intensive breathing*
+		int i = 0;
 		for (Section section : vocabulary.getSections()) {
-			listView.getItems().add(index + ") " + section.getName());
-			index++;
+			CheckBoxTreeItem<String> item = 
+				new CheckBoxTreeItem<String>((i + 1) + ") " + section.getName());
+			final int indexCopy = i;
+			item.selectedProperty().addListener((obs, former, selected) -> {
+				int index = indexCopy;
+				System.out.println(index + ": " + selected);
+				checkboxes[index] = selected;
+				int delta = 
+					vocabulary.getSections().get(index).getWords().size();
+				if (selected) {
+					selectedWords += delta;
+				} else {
+					selectedWords -= delta;
+				}
+				learnButton.setDisable(selectedWords == 0);
+				reviseButton.setDisable(selectedWords == 0);
+				words.setText(Translator.get("gui5") + selectedWords);
+			});
+			rootItem.getChildren().add(item);
+			i++;
 		}
+		TreeView<String> treeView = new TreeView<>(rootItem);
+		treeView.setCellFactory(CheckBoxTreeCell.<String>forTreeView());
 		
-		listView.setCellFactory(CheckBoxListCell.forListView(new Callback<String, ObservableValue<Boolean>>() {
-			@Override
-			public ObservableValue<Boolean> call(String item) {
-				BooleanProperty observable = new SimpleBooleanProperty();
-				observable.addListener((obs, wasSelected, isNowSelected) -> {
-					String indexString = item.substring(0, item.indexOf(")"));
-					int index = Integer.parseInt(indexString) - 1;
-					checkboxes[index] = isNowSelected;
-					int delta = vocabulary.getSections().get(index).getWords().size();
-					if (isNowSelected) {
-						selectedWords += delta;
-					} else {
-						selectedWords -= delta;
-					}
-					learnButton.setDisable(selectedWords == 0);
-					reviseButton.setDisable(selectedWords == 0);
-					words.setText(Translator.get("gui5") + selectedWords);
-				});
-				return observable;
-			}
-		}));
-		
-		root2.getChildren().add(listView);
+		//~ root2.getChildren().add(listView);
+		root2.getChildren().add(treeView);
 		root2.getChildren().add(learnButton);
 		root2.getChildren().add(reviseButton);
 		root2.getChildren().add(words);
@@ -232,7 +268,7 @@ public class MyApplication extends Application {
 			char c = FOREIGN_CHARACTERS[i];
 			Button button = new Button(String.valueOf(c));
 			button.setOnMouseClicked(e -> {
-				textField.setText(textField.getText() + c);
+				textField.setText(textField.getText() + button.getText());
 				textField.requestFocus();
 				textField.deselect();
 				// FIXME: Caret should not jump to end if
@@ -252,8 +288,8 @@ public class MyApplication extends Application {
 			foreignCharacterButtons[i] = button;
 		}
 		
-		// TODO: Be abel to switch commenting on the section below
-		//~ HBox hbox = new HBox(10, textField, button);
+		// TODO: Be able to switch commenting on the section below
+		HBox hbox = new HBox(10, textField, button);
 		//~ HBox.setHgrow(textField, Priority.ALWAYS);
 		//~ HBox.setHgrow(button, Priority.NEVER);
 		//~ hbox.setAlignment(Pos.BOTTOM_LEFT);

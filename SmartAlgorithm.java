@@ -103,7 +103,8 @@ public class SmartAlgorithm extends LearningAlgorithm {
 		super(v);
 		this.areWordsNew = areWordsNew;
 		instances = new ArrayList<Instance>(amount());
-		getWords().forEach(word -> instances.add(new Instance(word, areWordsNew)));
+		getWords().forEach(
+			word -> instances.add(new Instance(word, areWordsNew)));
 	}
 	
 	public SmartAlgorithm(List<Word> v) {

@@ -65,6 +65,10 @@ public class Translator {
 		currentLanguage = languages.indexOf(language);
 	}
 	
+	public static boolean hasLanguage(String language) {
+		return languages.contains(language);
+	}
+	
 	public static String get(String string) {
 		if (resources.get(string) == null) {
 			throw new IllegalArgumentException(

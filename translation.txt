@@ -1,5 +1,7 @@
-english
-german
+en
+de
+
+# Use ISO Language codes for the above!
 
 cui1
 Are you revising your vocabulary (r) or are you learning your vocabulary new (n)? (r/n) 
@@ -40,3 +42,7 @@ Weiter
 gui5
 Selected words: 
 Ausgewählte Vokabeln: 
+
+gui6
+All sections
+Alle Abschnitte
